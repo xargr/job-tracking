@@ -1,0 +1,1 @@
+### Make sure that you have installed plugins (prettier & eslint) to enable eslint
