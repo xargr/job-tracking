@@ -130,11 +130,58 @@ body {
 
 .modal {
   position: absolute;
-  width: 33%;
+  width: 20%;
   background: #fff;
   z-index: 1000;
-  left: 33%;
+  left: 40%;
   right: 33%;
-  top: calc(40% - 50px);
-  height: 100px;
+  top: calc(50% - 150px);
+  height: 300px;
+  border-radius: 10px;
+  padding: 2em;
+}
+
+.modal__title {
+  font-weight: 700;
+  font-size: 1.3em;
+  margin-bottom: 1em;
+}
+
+.modal__form label {
+  color: #999;
+}
+
+input.company__input,
+input.position__input {
+  background-color: #f2f5fa;
+  border: none;
+  display: block;
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  margin-top: 0.5em;
+}
+
+input.company__input:focus, input.position__input:focus {
+  outline: none;
+    border-bottom: 2px solid rgb(33, 150, 243);
+}
+
+button.addButton {
+  display: block;
+  margin-top: 1.15em;
+  background: #fff;
+  outline: none;
+  border: 2px solid rgb(33, 150, 243);
+  padding: 5px 25px;
+  color: rgb(33, 150, 243);
+  font-size: 1.2em;
+  font-weight: 700;
+  float: right;
+}
+
+button.addButton:hover {
+  background: rgb(33, 150, 243);
+  color: #fff;
+  cursor: pointer;
 }
