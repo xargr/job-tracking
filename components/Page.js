@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Meta from './Meta';
 import Header from './Header';
-import Footer from './Footer';
+import ModalForm from './ModalForm';
 
 const Page = ({ children }) => (
   <>
     <Meta />
     <Header />
     {children}
-    <Footer />
+    <ModalForm />
   </>
 );
 

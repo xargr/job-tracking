@@ -1,18 +1,9 @@
 import React from 'react';
-import WishList from './WishList';
-import Applied from './Applied';
-import Interview from './Interview';
-import Offer from './Offer';
-import Rejected from './Rejected';
+import FeatureList from './FeatureList';
 
-const JobsPanel = () => (
-  <>
-    <WishList />
-    <Applied />
-    <Interview />
-    <Offer />
-    <Rejected />
-  </>
-);
+const columns = ['wishlist', 'applied', 'interview', 'offer', 'rejected'];
+
+const JobsPanel = () =>
+  columns.map(comp => <FeatureList key={comp} title={comp} />);
 
 export default JobsPanel;
