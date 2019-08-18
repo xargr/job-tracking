@@ -1,13 +1,10 @@
 import React from 'react';
-import Link from 'next/link';
+import JobsPanel from '../components/JobsPanel/JobsPanel'
 
 function Index() {
   return (
     <>
-      <div>Welcome to Next.js!</div>
-      <Link href="/about">
-        <a>About Us</a>
-      </Link>
+      <JobsPanel />
     </>
   );
 }

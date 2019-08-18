@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+  font-size: 1em;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+body {
+  background-color: #f2f5fa;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 20% 80% 10%;
+  grid-gap: 1em;
+  grid-template-areas:
+    'header header header header header'
+    'wishlist applied interview offer rejected'
+    'footer footer footer footer footer';
+  min-height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  padding: 1em;
+  background-color: #fff;
+}
+
+.header h1 {
+  font-size: 2em;
+  color: #555;
+}
+
+.header span {
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.wishlist {
+  grid-area: wishlist;
+}
+
+.applied {
+  grid-area: applied;
+}
+
+.interview {
+  grid-area: interview;
+}
+
+.offer {
+  grid-area: offer;
+}
+
+.rejected {
+  grid-area: rejected;
+}
+
+.footer {
+  grid-area: footer;
+}
