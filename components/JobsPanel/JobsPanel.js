@@ -7,12 +7,15 @@ class JobsPanel extends React.PureComponent {
     super(props);
     this.state = {
       isOpen: false,
-      column: 'wishlist'
+      column: 'wishlist',
+      data: {}
     };
     this.columns = ['wishlist', 'applied', 'interview', 'offer', 'rejected'];
   }
 
   componentDidMount() {
+    this.loadLocalStorage();
+
     window.addEventListener('click', event => {
       if (this.state.isOpen) {
         // create dom element
@@ -32,6 +35,18 @@ class JobsPanel extends React.PureComponent {
     });
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('click', () => {});
+  }
+
+  loadLocalStorage = () => {
+    const localData = JSON.parse(localStorage.getItem('data'));
+
+    if (localData) {
+      this.setState({ data: localData });
+    }
+  };
+
   clickAddJob = column => {
     this.setState({
       isOpen: !this.state.isOpen,
@@ -39,15 +54,55 @@ class JobsPanel extends React.PureComponent {
     });
   };
 
+  handleModalData = data => {
+    this.setState(
+      {
+        isOpen: !this.state.isOpen
+      },
+      () => {
+        this.saveDataToLocalStorage(data);
+      }
+    );
+  };
+
+  saveDataToLocalStorage = data => {
+    if (window) {
+      const { column } = this.state;
+
+      const oldStorage = JSON.parse(localStorage.getItem('data'));
+
+      if (oldStorage && oldStorage[column]) {
+        const obj = oldStorage;
+        obj[column] = [...oldStorage[column], data];
+        localStorage.setItem('data', JSON.stringify(obj));
+        this.loadLocalStorage();
+      } else if (oldStorage && !oldStorage[column]) {
+        const obj = Object.assign(oldStorage, { [column]: [data] });
+        localStorage.setItem('data', JSON.stringify(obj));
+        this.loadLocalStorage();
+      } else {
+        const obj = {};
+        obj[column] = [data];
+        localStorage.setItem('data', JSON.stringify(obj));
+        this.loadLocalStorage();
+      }
+    }
+  };
+
   render() {
-    const { isOpen } = this.state;
+    const { isOpen, data } = this.state;
 
     return (
       <>
         {this.columns.map(comp => (
-          <FeatureList key={comp} title={comp} clickAddJob={this.clickAddJob} />
+          <FeatureList
+            key={comp}
+            data={data[comp]}
+            title={comp}
+            clickAddJob={this.clickAddJob}
+          />
         ))}
-        {isOpen && <ModalForm />}
+        {isOpen && <ModalForm handleData={this.handleModalData} />}
       </>
     );
   }

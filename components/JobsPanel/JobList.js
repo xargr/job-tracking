@@ -1,18 +1,20 @@
 import React from 'react';
+import moment from 'moment';
 
-const JobList = ({ title }) => (
-  <div className="jobList">
-    <div className="jobItem">
-      <div className="job__title">Appilio</div>
-      <div className="job__position">Front-end dev</div>
-      <div className="job__time__ago">5 minutes ago</div>
-    </div>
-    <div className="jobItem">
-      <div className="job__title">Appilio</div>
-      <div className="job__position">Front-end dev</div>
-      <div className="job__time__ago">5 minutes ago</div>
-    </div>
-  </div>
+const JobList = ({ title, data }) => (
+  <>
+    {data && data.length > 0 && (
+      <div className="jobList">
+        {data.map((item, index) => (
+          <div key={index} className="jobItem">
+            <div className="job__title">{item.company}</div>
+            <div className="job__position">{item.position}</div>
+            <div className="job__time__ago">{ moment.unix(item.date).fromNow() }</div>
+          </div>
+        ))}
+      </div>
+    )}
+  </>
 );
 
 export default JobList;
