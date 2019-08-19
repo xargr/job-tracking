@@ -1,3 +1,8 @@
 module.exports = {
-  distDir: "build"
+  distDir: 'build',
+  exportPathMap: function() {
+    return {
+      '/': { page: '/' }
+    };
+  }
 };
