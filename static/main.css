@@ -103,6 +103,7 @@ body {
 .job__title {
   font-size: 1.3em;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .job__position {
@@ -132,7 +133,8 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);  width: 20%;
+  transform: translate(-50%, -50%);
+  width: 20%;
   background: #fff;
   z-index: 1000;
   height: 300px;
@@ -161,9 +163,10 @@ input.position__input {
   margin-top: 0.5em;
 }
 
-input.company__input:focus, input.position__input:focus {
+input.company__input:focus,
+input.position__input:focus {
   outline: none;
-    border-bottom: 2px solid rgb(33, 150, 243);
+  border-bottom: 2px solid rgb(33, 150, 243);
 }
 
 button.addButton {
@@ -177,10 +180,31 @@ button.addButton {
   font-size: 1.2em;
   font-weight: 700;
   float: right;
+  cursor: pointer;
+
 }
 
 button.addButton:hover {
   background: rgb(33, 150, 243);
   color: #fff;
+}
+
+button.delButton {
+  display: inline-block;
+  margin-top: 1.15em;
+  background: #fff;
+  outline: none;
+  border: 2px solid rgb(243, 33, 109);
+  padding: 5px 25px;
+  color: rgb(243, 33, 109);
+  font-size: 1.2em;
+  font-weight: 700;
+  float: right;
+  margin-right: 10px;
   cursor: pointer;
+}
+
+button.delButton:hover {
+  background: rgb(243, 33, 109);
+  color: #fff;
 }

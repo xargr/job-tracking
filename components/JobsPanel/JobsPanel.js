@@ -1,6 +1,7 @@
 import React from 'react';
 import FeatureList from './FeatureList';
 import ModalForm from '../ModalForm';
+import EditModalForm from '../EditModalForm';
 
 class JobsPanel extends React.PureComponent {
   constructor(props) {
@@ -8,7 +9,10 @@ class JobsPanel extends React.PureComponent {
     this.state = {
       isOpen: false,
       column: 'wishlist',
-      data: {}
+      data: {},
+      updateData: {},
+      updateIndex: null,
+      updateColumn: ''
     };
     this.columns = ['wishlist', 'applied', 'interview', 'offer', 'rejected'];
   }
@@ -28,7 +32,10 @@ class JobsPanel extends React.PureComponent {
         // if is equal set state to close modal
         if (isOuterClick) {
           this.setState({
-            isOpen: !this.state.isOpen
+            isOpen: !this.state.isOpen,
+            updateData: {},
+            updateIndex: null,
+            updateColumn: ''
           });
         }
       }
@@ -89,8 +96,60 @@ class JobsPanel extends React.PureComponent {
     }
   };
 
+  updateItem = (column, item, index) => {
+    this.setState({
+      isOpen: !this.state.isOpen,
+      updateColumn: column,
+      updateIndex: index,
+      updateItem: { ...item }
+    });
+  };
+
+  handleEditModalData = (data, updateIndex, updateColumn) => {
+    if (window) {
+      const oldStorage = JSON.parse(localStorage.getItem('data'));
+
+      if (oldStorage && oldStorage[updateColumn]) {
+        const obj = oldStorage;
+        obj[updateColumn][updateIndex] = { ...data };
+        localStorage.setItem('data', JSON.stringify(obj));
+        this.loadLocalStorage();
+        this.setState({
+          isOpen: !this.state.isOpen,
+          updateData: {},
+          updateIndex: null,
+          updateColumn: ''
+        });
+      }
+    }
+  };
+
+  deletetData = (updateColumn, updateIndex) => {
+    if (window) {
+      const oldStorage = JSON.parse(localStorage.getItem('data'));
+
+      if (oldStorage && oldStorage[updateColumn]) {
+        const obj = oldStorage;
+        obj[updateColumn].splice(updateIndex, 1);
+        localStorage.setItem('data', JSON.stringify(obj));
+
+        this.setState(
+          {
+            isOpen: !this.state.isOpen,
+            updateData: {},
+            updateIndex: null,
+            updateColumn: ''
+          },
+          () => {
+            this.loadLocalStorage();
+          }
+        );
+      }
+    }
+  };
+
   render() {
-    const { isOpen, data } = this.state;
+    const { isOpen, data, updateColumn } = this.state;
 
     return (
       <>
@@ -98,11 +157,21 @@ class JobsPanel extends React.PureComponent {
           <FeatureList
             key={comp}
             data={data[comp]}
-            title={comp}
+            column={comp}
             clickAddJob={this.clickAddJob}
+            updateItem={this.updateItem}
           />
         ))}
-        {isOpen && <ModalForm handleData={this.handleModalData} />}
+        {isOpen && !updateColumn && (
+          <ModalForm handleData={this.handleModalData} />
+        )}
+        {isOpen && updateColumn && (
+          <EditModalForm
+            {...this.state}
+            handleEditModalData={this.handleEditModalData}
+            deletetData={this.deletetData}
+          />
+        )}
       </>
     );
   }
