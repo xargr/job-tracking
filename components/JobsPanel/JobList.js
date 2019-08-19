@@ -9,7 +9,7 @@ const JobList = ({ title, data }) => (
           <div key={index} className="jobItem">
             <div className="job__title">{item.company}</div>
             <div className="job__position">{item.position}</div>
-            <div className="job__time__ago">{ moment.unix(item.date).fromNow() }</div>
+            <div className="job__time__ago">{ moment(item.date).fromNow() }</div>
           </div>
         ))}
       </div>
