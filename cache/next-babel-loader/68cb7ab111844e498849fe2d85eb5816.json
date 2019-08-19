@@ -1,1 +1,0 @@
-{"ast":null,"code":"import React from 'react';\n\nconst Header = () => React.createElement(\"div\", {\n  className: \"header\"\n}, React.createElement(\"h1\", null, \"Job Tracking\"), React.createElement(\"span\", null, \"Stay organized by tracking the companies and jobs you are applying to. \"));\n\nexport default Header;","map":null,"metadata":{},"sourceType":"module"}

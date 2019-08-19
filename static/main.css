@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+  font-size: 1em;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+body {
+  background-color: #f2f5fa;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 1fr 10fr;
+  grid-gap: 1em;
+  grid-template-areas:
+    'header header header header header'
+    'wishlist applied interview offer rejected';
+  height: calc(100vh - 1em);
+}
+
+.header {
+  grid-area: header;
+  padding: 1em;
+  background-color: #fff;
+}
+
+.header h1 {
+  font-size: 2em;
+  color: #555;
+}
+
+.header span {
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.wishlist {
+  grid-area: wishlist;
+}
+
+.applied {
+  grid-area: applied;
+}
+
+.interview {
+  grid-area: interview;
+}
+
+.offer {
+  grid-area: offer;
+}
+
+.rejected {
+  grid-area: rejected;
+}
+
+.aux {
+  margin: 60px auto;
+  min-width: 80%;
+}
+
+.aux h3 {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.aux h3 span {
+  background-color: #c6cdda;
+  padding: 6px;
+  margin-right: 5px;
+  border-radius: 25px;
+}
+
+.add_new {
+  margin: 25px auto;
+  text-align: center;
+  padding: 10px 65px;
+  border: 1px dashed rgb(33, 150, 243, 0.5);
+  color: #2196f3;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.add_new:hover {
+  background-color: rgb(33, 150, 243, 1);
+  color: #fff;
+}
+
+.jobList {
+  margin-top: 30px;
+  overflow-y: auto;
+  height: 70vh;
+}
+
+.jobItem {
+  padding: 1em;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+.job__title {
+  font-size: 1.3em;
+  margin-bottom: 15px;
+}
+
+.job__position {
+  margin-bottom: 15px;
+  color: #999;
+  font-style: italic;
+}
+
+.job__time__ago {
+  font-size: 0.85em;
+  color: #999;
+}
+
+/* modal*/
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background: rgb(10, 10, 10, 0.8);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  min-height: 110vh;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  width: 20%;
+  background: #fff;
+  z-index: 1000;
+  height: 300px;
+  border-radius: 10px;
+  padding: 2em;
+}
+
+.modal__title {
+  font-weight: 700;
+  font-size: 1.3em;
+  margin-bottom: 1em;
+}
+
+.modal__form label {
+  color: #999;
+}
+
+input.company__input,
+input.position__input {
+  background-color: #f2f5fa;
+  border: none;
+  display: block;
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  margin-top: 0.5em;
+}
+
+input.company__input:focus, input.position__input:focus {
+  outline: none;
+    border-bottom: 2px solid rgb(33, 150, 243);
+}
+
+button.addButton {
+  display: block;
+  margin-top: 1.15em;
+  background: #fff;
+  outline: none;
+  border: 2px solid rgb(33, 150, 243);
+  padding: 5px 25px;
+  color: rgb(33, 150, 243);
+  font-size: 1.2em;
+  font-weight: 700;
+  float: right;
+}
+
+button.addButton:hover {
+  background: rgb(33, 150, 243);
+  color: #fff;
+  cursor: pointer;
+}
