@@ -62,15 +62,7 @@ var Meta = function Meta() {
       lineNumber: 5
     },
     __self: this
-  }, "Job Tracking application"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-    rel: "stylesheet",
-    href: "/static/main.css",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    },
-    __self: this
-  }));
+  }, "Job Tracking application"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Meta);

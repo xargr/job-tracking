@@ -121,7 +121,7 @@ var JobList = function JobList(_ref) {
         lineNumber: 12
       },
       __self: this
-    }, moment__WEBPACK_IMPORTED_MODULE_1___default.a.unix(item.date).fromNow()));
+    }, moment__WEBPACK_IMPORTED_MODULE_1___default()(item.date).fromNow()));
   })));
 };
 
