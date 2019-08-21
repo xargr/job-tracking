@@ -79,7 +79,7 @@ class JobsPanel extends React.PureComponent {
       const oldStorage = JSON.parse(localStorage.getItem('data'));
 
       if (oldStorage && oldStorage[column]) {
-        const obj = oldStorage;
+        const obj = Object.assign({}, oldStorage);
         obj[column] = [...oldStorage[column], data];
         localStorage.setItem('data', JSON.stringify(obj));
         this.loadLocalStorage();
@@ -110,7 +110,7 @@ class JobsPanel extends React.PureComponent {
       const oldStorage = JSON.parse(localStorage.getItem('data'));
 
       if (oldStorage && oldStorage[updateColumn]) {
-        const obj = oldStorage;
+        const obj = Object.assign({}, oldStorage);
         obj[updateColumn][updateIndex] = { ...data };
         localStorage.setItem('data', JSON.stringify(obj));
         this.loadLocalStorage();
@@ -129,7 +129,7 @@ class JobsPanel extends React.PureComponent {
       const oldStorage = JSON.parse(localStorage.getItem('data'));
 
       if (oldStorage && oldStorage[updateColumn]) {
-        const obj = oldStorage;
+        const obj = Object.assign({}, oldStorage);
         obj[updateColumn].splice(updateIndex, 1);
         localStorage.setItem('data', JSON.stringify(obj));
 
