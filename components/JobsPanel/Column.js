@@ -1,13 +1,13 @@
 import React from 'react';
-import JobList from './JobList';
+import List from './List';
 
-const FeatureList = ({ column, clickAddJob, data, updateItem }) => (
+const Column = ({ column, clickAddJob, data, updateItem }) => (
   <div className={column + ' aux'}>
     <h3>
       <span className="counter">{data && data.length || 0}</span> {column}
     </h3>
     <div onClick={() => clickAddJob(column)} className="add_new">&#43; Add job</div>
-    <JobList data={data} updateItem={updateItem} column={column} />
+    <List data={data} updateItem={updateItem} column={column} />
   </div>
 );
-export default FeatureList;
+export default Column;

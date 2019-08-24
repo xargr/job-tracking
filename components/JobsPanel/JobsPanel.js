@@ -1,5 +1,5 @@
 import React from 'react';
-import FeatureList from './FeatureList';
+import Column from './Column';
 import ModalForm from '../ModalForm';
 import EditModalForm from '../EditModalForm';
 
@@ -154,7 +154,7 @@ class JobsPanel extends React.PureComponent {
     return (
       <>
         {this.columns.map(comp => (
-          <FeatureList
+          <Column
             key={comp}
             data={data[comp]}
             column={comp}
