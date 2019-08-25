@@ -1,6 +1,6 @@
 import React from 'react';
-import JobsPanel from '../components/JobsPanel/JobsPanel';
+import JobsContainer from '../components/Jobs/JobsContainer';
 
-const Index = () => <JobsPanel />;
+const Index = () => <JobsContainer />;
 
 export default Index;

@@ -1,19 +1,23 @@
-import App, { Container } from 'next/app';
+import App from 'next/app';
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
 import Page from '../components/Page';
 
-class MyApp extends App {
+const theme = {
+  colors: {
+    primary: '#0070f3'
+  }
+};
+
+export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <Container>
-        <div className="wrapper">
-          <Page>
-            <Component {...pageProps} />
-          </Page>
-        </div>
-      </Container>
+      <ThemeProvider theme={theme}>
+        <Page>
+          <Component {...pageProps} />
+        </Page>
+      </ThemeProvider>
     );
   }
 }
-
-export default MyApp;

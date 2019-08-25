@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import Meta from './Meta';
-import Header from './Header';
+import 'reset-css';
 
 const Page = ({ children }) => (
   <>
     <Meta />
-    <Header />
     {children}
   </>
 );
