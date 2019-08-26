@@ -4,7 +4,32 @@ import data from '../../lib/data';
 import Column from './Column';
 
 class JobsContainer extends React.PureComponent {
-  state = data;
+  state = {};
+
+  componentDidMount() {
+    this._loadData();
+  }
+
+  _loadData = () => {
+    if (window) {
+      const local = JSON.parse(localStorage.getItem('data'));
+
+      if (local) {
+        this.setState({ ...local });
+        return;
+      }
+    }
+
+    this.setState({ ...data });
+  };
+
+  _saveToStorage = state => {
+    if (window) {
+      this.setState({ ...state }, () => {
+        localStorage.setItem('data', JSON.stringify(state));
+      });
+    }
+  };
 
   onDragEnd = result => {
     const { destination, source, draggableId } = result;
@@ -41,7 +66,7 @@ class JobsContainer extends React.PureComponent {
         }
       };
 
-      this.setState(newState);
+      this._saveToStorage(newState);
       return;
     }
 
@@ -70,7 +95,7 @@ class JobsContainer extends React.PureComponent {
       }
     };
 
-    this.setState(newState);
+    this._saveToStorage(newState);
   };
 
   render() {
