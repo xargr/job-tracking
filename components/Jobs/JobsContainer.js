@@ -1,7 +1,17 @@
 import React from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
+import styled from 'styled-components';
 import data from '../../lib/data';
 import Column from './Column';
+
+const Container = styled.div`
+  grid-row: content;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 1em;
+  background-color: #f2f5fa;
+  padding: 2em 0;
+`;
 
 class JobsContainer extends React.PureComponent {
   state = {};
@@ -104,16 +114,23 @@ class JobsContainer extends React.PureComponent {
     }
 
     return (
-      <DragDropContext onDragEnd={this.onDragEnd}>
-        {this.state.columnOrder.map((columnId, index) => {
-          const column = this.state.columns[columnId];
-          const jobs = column.jobs.map(jobId => this.state.jobs[jobId]);
+      <Container>
+        <DragDropContext onDragEnd={this.onDragEnd}>
+          {this.state.columnOrder.map((columnId, index) => {
+            const column = this.state.columns[columnId];
+            const jobs = column.jobs.map(jobId => this.state.jobs[jobId]);
 
-          return (
-            <Column key={column.id} column={column} jobs={jobs} index={index} />
-          );
-        })}
-      </DragDropContext>
+            return (
+              <Column
+                key={column.id}
+                column={column}
+                jobs={jobs}
+                index={index}
+              />
+            );
+          })}
+        </DragDropContext>
+      </Container>
     );
   }
 }

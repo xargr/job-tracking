@@ -9,9 +9,9 @@
   "scripts": {
     "dev": "next -p 7777",
     "build": "next build",
-    "start": "next start",
-    "export": "next export",
-    "deploy": "gh-pages -d out"
+    "start": "npm run build && next start",
+    "export": "npm run build && next export",
+    "deploy": "npm run export && cp .nojekyll ./out && gh-pages -d out"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
