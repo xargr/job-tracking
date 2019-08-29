@@ -11,7 +11,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "deploy": "gh-pages -d out -a"
+    "deploy": "cp .nojekyll out/ && gh-pages -d out -a"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
