@@ -2,10 +2,12 @@ import App from 'next/app';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import Page from '../components/Page';
+import JobContextProvider from '../components/context/JobContext';
 
 const theme = {
   colors: {
-    primary: '#0070f3'
+    blue: '#2696f3',
+    bg: '#f2f5fa'
   }
 };
 
@@ -14,9 +16,11 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <ThemeProvider theme={theme}>
-        <Page>
-          <Component {...pageProps} />
-        </Page>
+        <JobContextProvider>
+          <Page>
+            <Component {...pageProps} />
+          </Page>
+        </JobContextProvider>
       </ThemeProvider>
     );
   }

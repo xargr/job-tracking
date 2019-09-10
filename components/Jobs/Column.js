@@ -38,7 +38,7 @@ const Center = styled.div`
 `;
 
 const Button = styled.button`
-  color: #2696f3;
+  color: ${({ theme }) => theme.colors.blue};
   border: 1px dashed #2696f3;
   background-color: transparent;
   margin: 1em;
@@ -49,7 +49,7 @@ const Button = styled.button`
   font-size: 1em;
 
   &:hover {
-    background-color: #2696f3;
+    background-color: ${({ theme }) => theme.colors.blue};
     color: #fff;
   }
 
@@ -58,39 +58,34 @@ const Button = styled.button`
   }
 `;
 
-class Column extends React.PureComponent {
-  render() {
-    return (
-      <Container>
-        <H3>
-          <span>{this.props.jobs.length}</span>
-          {this.props.column.title}
-        </H3>
-        <Center>
-          <Button>&#43; Add job</Button>
-        </Center>
-        <Droppable
-          droppableId={this.props.column.id}
-          key={this.props.column.id}
-          index={this.props.index}
-        >
-          {(provided, snapshot) => (
-            <JobList
-              {...provided.draggableProps}
-              {...provided.dragHandleProps}
-              ref={provided.innerRef}
-              isDraggingOver={snapshot.isDraggingOver}
-            >
-              {this.props.jobs.map((job, index) => (
+const Column = ({ jobs, column, index, modalTrigger }) => {
+  return (
+    <Container>
+      <H3>
+        <span>{jobs.length}</span>
+        {column.title}
+      </H3>
+      <Center>
+        <Button onClick={() => modalTrigger(column.id)}>&#43; Add job</Button>
+      </Center>
+      <Droppable droppableId={column.id} key={column.id} index={index}>
+        {(provided, snapshot) => (
+          <JobList
+            {...provided.draggableProps}
+            {...provided.dragHandleProps}
+            ref={provided.innerRef}
+            isDraggingOver={snapshot.isDraggingOver}
+          >
+            {jobs &&
+              jobs.map((job, index) => (
                 <Job key={index} job={job} index={index} />
               ))}
-              {provided.placeholder}
-            </JobList>
-          )}
-        </Droppable>
-      </Container>
-    );
-  }
-}
+            {provided.placeholder}
+          </JobList>
+        )}
+      </Droppable>
+    </Container>
+  );
+};
 
 export default Column;

@@ -10,27 +10,21 @@ const Container = styled.div`
   background-color: ${props => (props.isDragging ? 'lightgreen' : 'white')};
 `;
 
-class Job extends React.PureComponent {
-  render() {
-    return (
-      <Draggable
-        draggableId={this.props.job.id}
-        key={this.props.job.id}
-        index={this.props.index}
-      >
-        {(provided, snapshot) => (
-          <Container
-            ref={provided.innerRef}
-            {...provided.draggableProps}
-            {...provided.dragHandleProps}
-            isDragging={snapshot.isDragging}
-          >
-            {this.props.job.company}
-          </Container>
-        )}
-      </Draggable>
-    );
-  }
-}
+const Job = ({ job, index }) => {
+  return (
+    <Draggable draggableId={job.id} key={job.id} index={index}>
+      {(provided, snapshot) => (
+        <Container
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          isDragging={snapshot.isDragging}
+        >
+          {job.company}
+        </Container>
+      )}
+    </Draggable>
+  );
+};
 
 export default Job;

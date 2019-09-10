@@ -16,12 +16,15 @@ const Container = styled.div`
   grid-row-gap: 1em;
 `;
 
-const Page = ({ children }) => (
-  <Container>
-    <Meta />
-    <Header />
-    {children}
-    <Footer />
-  </Container>
-);
+const Page = ({ children }) => {
+  return (
+    <Container>
+      <Meta />
+      <Header />
+      {children}
+      <Footer />
+    </Container>
+  );
+};
+
 export default Page;
