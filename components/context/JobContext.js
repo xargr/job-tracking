@@ -22,7 +22,13 @@ const JobContextProvider = ({ children }) => {
   const onDragEnd = result => dragAndDrop(result, state, setState);
 
   const modalTrigger = columnId => {
-    setState({ ...state, isModalOpen: !state.isModalOpen, columnId });
+    const colId = columnId || null;
+
+    setState({
+      ...state,
+      isModalOpen: !state.isModalOpen,
+      modalData: { columnId: colId }
+    });
   };
 
   return (

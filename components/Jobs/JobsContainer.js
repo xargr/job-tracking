@@ -3,6 +3,7 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import styled from 'styled-components';
 import Column from './Column';
 import { JobContext } from '../context/JobContext';
+import ModalForm from '../ModalForm';
 
 const Container = styled.div`
   grid-row: content;
@@ -14,9 +15,14 @@ const Container = styled.div`
 `;
 
 const JobsContainer = () => {
-  const { columnOrder, columns, jobs, onDragEnd, modalTrigger } = useContext(
-    JobContext
-  );
+  const {
+    columnOrder,
+    columns,
+    jobs,
+    onDragEnd,
+    modalTrigger,
+    isModalOpen
+  } = useContext(JobContext);
 
   return (
     <Container>
@@ -37,6 +43,9 @@ const JobsContainer = () => {
             );
           })}
       </DragDropContext>
+      {isModalOpen && (
+        <ModalForm modalTrigger={modalTrigger} isModalOpen={isModalOpen} />
+      )}
     </Container>
   );
 };
