@@ -1,0 +1,1 @@
+{"version":3,"file":"static/webpack/static/development/pages/_app.js.406a3c18b1cc2e3854c8.hot-update.js","sources":["webpack:///./components/ModalForm.js"],"sourcesContent":["import React from 'react'\n\nconst ModalForm = () => {\n    return(\n        <div></div>\n    )\n}"],"mappings":";;;;;;;;;;;;;;AAAA;AACA;AACA;AACA;AACA;AAAA;AAAA;AAAA;AAAA;AAAA;AAEA;;;;A","sourceRoot":""}

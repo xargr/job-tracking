@@ -237,9 +237,12 @@ var JobContextProvider = function JobContextProvider(_ref) {
   };
 
   var modalTrigger = function modalTrigger(columnId) {
+    var colId = columnId || null;
     setState(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
       isModalOpen: !state.isModalOpen,
-      columnId: columnId
+      modalData: {
+        columnId: colId
+      }
     }));
   };
 
@@ -250,7 +253,7 @@ var JobContextProvider = function JobContextProvider(_ref) {
     }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 35
     },
     __self: this
   }, children);
