@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import uuidv4 from 'uuid/v4';
 import data from '../../lib/data';
 import dragAndDrop from '../../lib/dragAndDrop';
 
@@ -31,8 +32,47 @@ const JobContextProvider = ({ children }) => {
     });
   };
 
+  const modalSubmit = objValues => {
+    const { company, position } = objValues;
+
+    const uniqId = uuidv4();
+
+    const newJob = {
+      id: uniqId,
+      company,
+      position,
+      date: Date.now()
+    };
+
+    const newJobs = Object.assign({}, state.jobs);
+    newJobs[uniqId] = {
+      ...newJob
+    };
+
+    const colId = state.modalData.columnId;
+    const newColumns = Object.assign({}, state.columns);
+    const oldColumn = newColumns[colId];
+
+    newColumns[colId] = {
+      ...oldColumn,
+      jobs: [...oldColumn.jobs, uniqId]
+    };
+
+    const newState = {
+      ...state,
+      columns: newColumns,
+      jobs: newJobs,
+      isModalOpen: !state.isModalOpen,
+      modalData: { columnId: null, company: '', position: '' }
+    };
+
+    setState(newState);
+  };
+
   return (
-    <JobContext.Provider value={{ ...state, onDragEnd, modalTrigger }}>
+    <JobContext.Provider
+      value={{ ...state, onDragEnd, modalTrigger, modalSubmit }}
+    >
       {children}
     </JobContext.Provider>
   );

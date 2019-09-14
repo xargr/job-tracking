@@ -21,7 +21,8 @@
     "react-beautiful-dnd": "^11.0.5",
     "react-dom": "^16.9.0",
     "reset-css": "^4.0.1",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.3.2",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "eslint": "^6.1.0",

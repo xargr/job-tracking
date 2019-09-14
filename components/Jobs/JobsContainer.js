@@ -21,7 +21,8 @@ const JobsContainer = () => {
     jobs,
     onDragEnd,
     modalTrigger,
-    isModalOpen
+    isModalOpen,
+    modalSubmit
   } = useContext(JobContext);
 
   return (
@@ -44,7 +45,7 @@ const JobsContainer = () => {
           })}
       </DragDropContext>
       {isModalOpen && (
-        <ModalForm modalTrigger={modalTrigger} isModalOpen={isModalOpen} />
+        <ModalForm modalTrigger={modalTrigger} modalSubmit={modalSubmit} />
       )}
     </Container>
   );

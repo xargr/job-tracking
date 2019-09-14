@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import styled from 'styled-components';
+import isModalValid from '../lib/isModalValid'
 
 const Overlay = styled.div`
   background-color: rgba(51, 41, 41, 0.65);
@@ -85,11 +86,18 @@ const Button = styled.button`
   font-size: 1em;
 `;
 
-const ModalForm = ({ modalTrigger, isModalOpen }) => {
+const ModalForm = ({ modalTrigger, modalSubmit }) => {
+  const [state, setState] = useState({
+    company: 'demo',
+    position: 'demo'
+  });
+
+  const [isValid, setIsValid] = useState(false);
+
   const node = useRef();
 
   const handleClick = useCallback(e => {
-    if (isModalOpen && node.current && !node.current.contains(e.target)) {
+    if (node.current && !node.current.contains(e.target)) {
       modalTrigger(null);
     }
   }, []);
@@ -102,6 +110,20 @@ const ModalForm = ({ modalTrigger, isModalOpen }) => {
     };
   }, []);
 
+  const handleForm = e => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value
+    });
+
+    isModalValid(state, setIsValid);
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    modalSubmit(state);
+  };
+
   return (
     <Overlay>
       <Container ref={node}>
@@ -110,10 +132,22 @@ const ModalForm = ({ modalTrigger, isModalOpen }) => {
         </Close>
         <H4>Add Job</H4>
         <Label htmlFor="company">Company</Label>
-        <Input name="company" autoComplete="off" />
+        <Input
+          name="company"
+          value={state.company}
+          autoComplete="off"
+          onChange={e => handleForm(e)}
+        />
         <Label htmlFor="position">Position</Label>
-        <Input name="position" autoComplete="off" />
-        <Button>Save</Button>
+        <Input
+          name="position"
+          value={state.position}
+          autoComplete="off"
+          onChange={e => handleForm(e)}
+        />
+        <Button disabled={!isValid} onClick={e => handleSubmit(e)}>
+          Save
+        </Button>
       </Container>
     </Overlay>
   );
