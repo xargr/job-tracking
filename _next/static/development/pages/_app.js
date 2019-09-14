@@ -1,5 +1,43 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/_app.js"],{
 
+/***/ "./components/Export.js":
+/*!******************************!*\
+  !*** ./components/Export.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Styled_HeaderButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Styled/HeaderButton */ "./components/Styled/HeaderButton.js");
+/* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./context/JobContext */ "./components/context/JobContext.js");
+/* harmony import */ var _lib_toJson__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lib/toJson */ "./lib/toJson.js");
+var _jsxFileName = "/home/greg/sites/jobTracking/components/Export.js";
+
+
+
+
+
+var Export = function Export() {
+  var context = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_JobContext__WEBPACK_IMPORTED_MODULE_2__["JobContext"]);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Styled_HeaderButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    onClick: function onClick() {
+      return Object(_lib_toJson__WEBPACK_IMPORTED_MODULE_3__["default"])(context);
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, "Export JSON");
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Export);
+
+/***/ }),
+
 /***/ "./components/Footer.js":
 /*!******************************!*\
   !*** ./components/Footer.js ***!
@@ -46,7 +84,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _Export__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Export */ "./components/Export.js");
 var _jsxFileName = "/home/greg/sites/jobTracking/components/Header.js";
+
 
 
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
@@ -61,27 +101,53 @@ var Span = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].span.withCo
   displayName: "Header__Span",
   componentId: "sc-4rw5b7-2"
 })(["font-style:italic;"]);
+var LeftSide = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "Header__LeftSide",
+  componentId: "sc-4rw5b7-3"
+})(["width:50%;float:left;"]);
+var RightSide = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "Header__RightSide",
+  componentId: "sc-4rw5b7-4"
+})(["width:50%;float:right;text-align:right;margin-top:30px;"]);
 
 var Header = function Header() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 34
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LeftSide, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(H1, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 36
     },
     __self: this
   }, "Job Tracking"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Span, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 37
     },
     __self: this
-  }, "Stay organized by tracking the companies and jobs you are applying to.", ' '));
+  }, "Stay organized by tracking the companies and jobs you are applying to.", ' ')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RightSide, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Export__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: this
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -151,38 +217,51 @@ var _jsxFileName = "/home/greg/sites/jobTracking/components/Page.js";
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "Page__Container",
   componentId: "kksq7l-0"
-})(["display:grid;grid-template-areas:'header' 'content' 'footer';grid-template-rows:10vh 90vh 10vh;grid-row-gap:1em;"]);
+})(["display:grid;grid-template-areas:'header' 'content';grid-template-rows:10vh 90vh;grid-row-gap:1em;"]);
 
 var Page = function Page(_ref) {
   var children = _ref.children;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 20
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Meta__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 21
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 22
     },
     __self: this
-  }), children, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }));
+  }), children);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Page);
+
+/***/ }),
+
+/***/ "./components/Styled/HeaderButton.js":
+/*!*******************************************!*\
+  !*** ./components/Styled/HeaderButton.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+var HeaderButton = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button.withConfig({
+  displayName: "HeaderButton",
+  componentId: "sc-1kzx7oa-0"
+})(["background:white;border:1px dashed #2696f3;padding:8px 15px;outline:none;color:#2696f3;font-weight:700;cursor:pointer;margin-right:10px;"]);
+/* harmony default export */ __webpack_exports__["default"] = (HeaderButton);
 
 /***/ }),
 
@@ -510,6 +589,31 @@ __webpack_require__.r(__webpack_exports__);
   });
 
   setState(newState);
+});
+
+/***/ }),
+
+/***/ "./lib/toJson.js":
+/*!***********************!*\
+  !*** ./lib/toJson.js ***!
+  \***********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ __webpack_exports__["default"] = (function (jsonData) {
+  var dataStr = _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(jsonData);
+
+  var dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+  var exportFileDefaultName = 'jobTracking.json';
+  var linkElement = document.createElement('a');
+  linkElement.setAttribute('href', dataUri);
+  linkElement.setAttribute('download', exportFileDefaultName);
+  linkElement.click();
 });
 
 /***/ }),
