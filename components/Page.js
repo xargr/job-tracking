@@ -10,9 +10,8 @@ const Container = styled.div`
   display: grid;
   grid-template-areas:
     'header'
-    'content'
-    'footer';
-  grid-template-rows: 10vh 90vh 10vh;
+    'content';
+  grid-template-rows: 10vh 90vh;
   grid-row-gap: 1em;
 `;
 
@@ -22,7 +21,6 @@ const Page = ({ children }) => {
       <Meta />
       <Header />
       {children}
-      <Footer />
     </Container>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Export from './Export';
 
 const Container = styled.div`
   grid-row: header;
@@ -17,12 +18,29 @@ const Span = styled.span`
   font-style: italic;
 `;
 
+const LeftSide = styled.div`
+  width: 50%;
+  float: left;
+`;
+
+const RightSide = styled.div`
+  width: 50%;
+  float: right;
+  text-align: right;
+  margin-top: 30px;
+`;
+
 const Header = () => (
   <Container>
-    <H1>Job Tracking</H1>
-    <Span>
-      Stay organized by tracking the companies and jobs you are applying to.{' '}
-    </Span>
+    <LeftSide>
+      <H1>Job Tracking</H1>
+      <Span>
+        Stay organized by tracking the companies and jobs you are applying to.{' '}
+      </Span>
+    </LeftSide>
+    <RightSide>
+      <Export />
+    </RightSide>
   </Container>
 );
 export default Header;

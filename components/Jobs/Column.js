@@ -4,7 +4,6 @@ import { Droppable } from 'react-beautiful-dnd';
 import Job from './Job';
 
 const Container = styled.div`
-  border: 1px solid lightgrey;
   border-radius: 2px;
   padding: 1em;
 `;
@@ -30,7 +29,10 @@ const H3 = styled.h3`
 `;
 const JobList = styled.div`
   padding: 8px;
-  background-color: ${props => (props.isDraggingOver ? 'skyblue' : 'white')};
+  min-height: 60vh;
+  overflow-y: auto;
+  height: 60vh;
+  border: ${props => (props.isDraggingOver ? '1px dotted grey' : 'none')};
 `;
 
 const Center = styled.div`
@@ -58,34 +60,33 @@ const Button = styled.button`
   }
 `;
 
-const Column = ({ jobs, column, index, modalTrigger }) => {
-  return (
-    <Container>
-      <H3>
-        <span>{jobs.length}</span>
-        {column.title}
-      </H3>
-      <Center>
-        <Button onClick={() => modalTrigger(column.id)}>&#43; Add job</Button>
-      </Center>
-      <Droppable droppableId={column.id} key={column.id} index={index}>
-        {(provided, snapshot) => (
-          <JobList
-            {...provided.draggableProps}
-            {...provided.dragHandleProps}
-            ref={provided.innerRef}
-            isDraggingOver={snapshot.isDraggingOver}
-          >
-            {jobs &&
-              jobs.map((job, index) => (
-                <Job key={index} job={job} index={index} columnId={column.id} />
-              ))}
-            {provided.placeholder}
-          </JobList>
-        )}
-      </Droppable>
-    </Container>
-  );
-};
+const Column = ({ jobs, column, index, modalTrigger }) => (
+  <Droppable droppableId={column.id} key={column.id} index={index}>
+    {(provided, snapshot) => (
+      <Container isDraggingOver={snapshot.isDraggingOver}>
+        <H3>
+          <span>{jobs.length}</span>
+          {column.title}
+        </H3>
+        <Center>
+          <Button onClick={() => modalTrigger(column.id)}>&#43; Add job</Button>
+        </Center>
+
+        <JobList
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          ref={provided.innerRef}
+          isDraggingOver={snapshot.isDraggingOver}
+        >
+          {jobs &&
+            jobs.map((job, index) => (
+              <Job key={index} job={job} index={index} columnId={column.id} />
+            ))}
+          {provided.placeholder}
+        </JobList>
+      </Container>
+    )}
+  </Droppable>
+);
 
 export default Column;
