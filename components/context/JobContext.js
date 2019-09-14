@@ -22,18 +22,48 @@ const JobContextProvider = ({ children }) => {
 
   const onDragEnd = result => dragAndDrop(result, state, setState);
 
-  const modalTrigger = columnId => {
-    const colId = columnId || null;
-
+  const modalTrigger = data => {
     setState({
       ...state,
       isModalOpen: !state.isModalOpen,
-      modalData: { columnId: colId }
+      modalData: {
+        columnId: data,
+        company: '',
+        position: '',
+        jobId: null
+      }
     });
   };
 
-  const modalSubmit = objValues => {
-    const { company, position } = objValues;
+  const modalSubmit = modalValues => {
+    const { company, position, columnId, jobId } = modalValues;
+
+    if (jobId) {
+      const newJobs = {
+        ...state.jobs,
+        [jobId]: {
+          ...state.jobs[jobId],
+          company,
+          position,
+          date: Date.now()
+        }
+      };
+
+      const newState = {
+        ...state,
+        jobs: newJobs,
+        isModalOpen: !state.isModalOpen,
+        modalData: {
+          columnId: null,
+          company: '',
+          position: '',
+          jobId: null
+        }
+      };
+
+      setState(newState);
+      return;
+    }
 
     const uniqId = uuidv4();
 
@@ -44,26 +74,49 @@ const JobContextProvider = ({ children }) => {
       date: Date.now()
     };
 
-    const newJobs = Object.assign({}, state.jobs);
-    newJobs[uniqId] = {
-      ...newJob
+    const newJobs = {
+      ...state.jobs,
+      [uniqId]: newJob
     };
 
-    const colId = state.modalData.columnId;
-    const newColumns = Object.assign({}, state.columns);
-    const oldColumn = newColumns[colId];
+    const selectedColumn = state.columns[columnId];
 
-    newColumns[colId] = {
-      ...oldColumn,
-      jobs: [...oldColumn.jobs, uniqId]
+    const newColumns = {
+      ...state.columns,
+      [columnId]: {
+        ...selectedColumn,
+        jobs: [...selectedColumn.jobs, uniqId]
+      }
     };
 
     const newState = {
       ...state,
-      columns: newColumns,
       jobs: newJobs,
+      columns: newColumns,
       isModalOpen: !state.isModalOpen,
-      modalData: { columnId: null, company: '', position: '' }
+      modalData: {
+        columnId: null,
+        company: '',
+        position: '',
+        jobId: null
+      }
+    };
+
+    setState(newState);
+  };
+
+  const editModal = (job, columnId) => {
+    const { company, position, id } = job;
+
+    const newState = {
+      ...state,
+      isModalOpen: !state.isModalOpen,
+      modalData: {
+        columnId: columnId,
+        company,
+        position,
+        jobId: id
+      }
     };
 
     setState(newState);
@@ -71,7 +124,7 @@ const JobContextProvider = ({ children }) => {
 
   return (
     <JobContext.Provider
-      value={{ ...state, onDragEnd, modalTrigger, modalSubmit }}
+      value={{ ...state, onDragEnd, modalTrigger, modalSubmit, editModal }}
     >
       {children}
     </JobContext.Provider>

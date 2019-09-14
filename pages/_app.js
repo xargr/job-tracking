@@ -15,13 +15,11 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <ThemeProvider theme={theme}>
-        <JobContextProvider>
-          <Page>
-            <Component {...pageProps} />
-          </Page>
-        </JobContextProvider>
-      </ThemeProvider>
+      <JobContextProvider>
+        <Page>
+          <Component {...pageProps} />
+        </Page>
+      </JobContextProvider>
     );
   }
 }

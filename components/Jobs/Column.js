@@ -38,7 +38,7 @@ const Center = styled.div`
 `;
 
 const Button = styled.button`
-  color: ${({ theme }) => theme.colors.blue};
+  color: #2696f3;
   border: 1px dashed #2696f3;
   background-color: transparent;
   margin: 1em;
@@ -49,7 +49,7 @@ const Button = styled.button`
   font-size: 1em;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.blue};
+    background-color: #2696f3;
     color: #fff;
   }
 
@@ -78,7 +78,7 @@ const Column = ({ jobs, column, index, modalTrigger }) => {
           >
             {jobs &&
               jobs.map((job, index) => (
-                <Job key={index} job={job} index={index} />
+                <Job key={index} job={job} index={index} columnId={column.id} />
               ))}
             {provided.placeholder}
           </JobList>

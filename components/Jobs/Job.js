@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { Draggable } from 'react-beautiful-dnd';
+import { JobContext } from '../context/JobContext';
 
 const Container = styled.div`
   border: 1px solid lightgrey;
@@ -10,11 +11,14 @@ const Container = styled.div`
   background-color: ${props => (props.isDragging ? 'lightgreen' : 'white')};
 `;
 
-const Job = ({ job, index }) => {
+const Job = ({ job, index, columnId }) => {
+  const { editModal } = useContext(JobContext);
+
   return (
     <Draggable draggableId={job.id} key={job.id} index={index}>
       {(provided, snapshot) => (
         <Container
+          onDoubleClick={() => editModal(job, columnId)}
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}

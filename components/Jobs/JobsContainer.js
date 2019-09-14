@@ -10,7 +10,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 1em;
-  background-color: ${({ theme }) => theme.colors.bg};
+  background-color: #f2f5fa;
   padding: 2em 0;
 `;
 
@@ -22,7 +22,6 @@ const JobsContainer = () => {
     onDragEnd,
     modalTrigger,
     isModalOpen,
-    modalSubmit
   } = useContext(JobContext);
 
   return (
@@ -44,9 +43,7 @@ const JobsContainer = () => {
             );
           })}
       </DragDropContext>
-      {isModalOpen && (
-        <ModalForm modalTrigger={modalTrigger} modalSubmit={modalSubmit} />
-      )}
+      {isModalOpen && <ModalForm />}
     </Container>
   );
 };

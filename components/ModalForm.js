@@ -1,6 +1,13 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, {
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+  useCallback
+} from 'react';
 import styled from 'styled-components';
-import isModalValid from '../lib/isModalValid'
+import isModalValid from '../lib/isModalValid';
+import { JobContext } from './context/JobContext';
 
 const Overlay = styled.div`
   background-color: rgba(51, 41, 41, 0.65);
@@ -86,10 +93,11 @@ const Button = styled.button`
   font-size: 1em;
 `;
 
-const ModalForm = ({ modalTrigger, modalSubmit }) => {
+const ModalForm = () => {
+  const { modalData, modalTrigger, modalSubmit } = useContext(JobContext);
+
   const [state, setState] = useState({
-    company: 'demo',
-    position: 'demo'
+    ...modalData
   });
 
   const [isValid, setIsValid] = useState(false);
