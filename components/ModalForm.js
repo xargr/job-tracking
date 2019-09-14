@@ -78,8 +78,8 @@ const Input = styled.input`
   }
 `;
 
-const Button = styled.button`
-  margin: 20px;
+const ButtonSave = styled.button`
+  margin: 20px 0;
   float: right;
   width: 75px;
   height: 35px;
@@ -87,6 +87,21 @@ const Button = styled.button`
   background-color: rgb(22, 138, 230);
   outline: none;
   border: 1px solid rgb(22, 138, 230);
+  border-radius: 2px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1em;
+`;
+
+const ButtonDelete = styled.button`
+  margin: 20px 10px 0px 0px;
+  float: right;
+  width: 75px;
+  height: 35px;
+  cursor: pointer;
+  background-color: rgba(230, 22, 32, 0.85);
+  outline: none;
+  border: 1px solid rgba(230, 22, 32, 0.85);
   border-radius: 2px;
   color: #fff;
   font-weight: 700;
@@ -132,6 +147,11 @@ const ModalForm = () => {
     modalSubmit(state);
   };
 
+  const handleDelete = (e, jobId, columnId) => {
+    e.preventDefault();
+    console.log(jobId, columnId);
+  };
+
   return (
     <Overlay>
       <Container ref={node}>
@@ -153,9 +173,16 @@ const ModalForm = () => {
           autoComplete="off"
           onChange={e => handleForm(e)}
         />
-        <Button disabled={!isValid} onClick={e => handleSubmit(e)}>
+        <ButtonSave disabled={!isValid} onClick={e => handleSubmit(e)}>
           Save
-        </Button>
+        </ButtonSave>
+        {state.jobId && (
+          <ButtonDelete
+            onClick={e => handleDelete(e, state.jobId, state.columnId)}
+          >
+            Delete
+          </ButtonDelete>
+        )}
       </Container>
     </Overlay>
   );
