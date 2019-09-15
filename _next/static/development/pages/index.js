@@ -678,6 +678,10 @@ var JobContextProvider = function JobContextProvider(_ref) {
     setState(_lib_data__WEBPACK_IMPORTED_MODULE_9__["default"]);
   };
 
+  var uploadData = function uploadData(data) {
+    setState(data);
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(JobContext.Provider, {
     value: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_4__["default"])({}, state, {
       onDragEnd: onDragEnd,
@@ -685,11 +689,12 @@ var JobContextProvider = function JobContextProvider(_ref) {
       modalSubmit: modalSubmit,
       editModal: editModal,
       deleteSubmit: deleteSubmit,
-      deleteAll: deleteAll
+      deleteAll: deleteAll,
+      uploadData: uploadData
     }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 151
+      lineNumber: 155
     },
     __self: this
   }, children);

@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/_app.js"],{
 
-/***/ "./components/DeleteAll.js":
-/*!*********************************!*\
-  !*** ./components/DeleteAll.js ***!
-  \*********************************/
+/***/ "./components/Button/DeleteAll.js":
+/*!****************************************!*\
+  !*** ./components/Button/DeleteAll.js ***!
+  \****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -11,9 +11,9 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Styled_HeaderButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Styled/HeaderButton */ "./components/Styled/HeaderButton.js");
-/* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./context/JobContext */ "./components/context/JobContext.js");
-var _jsxFileName = "/home/greg/sites/jobTracking/components/DeleteAll.js";
+/* harmony import */ var _Styled_HeaderButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Styled/HeaderButton */ "./components/Styled/HeaderButton.js");
+/* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../context/JobContext */ "./components/context/JobContext.js");
+var _jsxFileName = "/home/greg/sites/jobTracking/components/Button/DeleteAll.js";
 
 
 
@@ -38,10 +38,10 @@ var DeleteAll = function DeleteAll() {
 
 /***/ }),
 
-/***/ "./components/Export.js":
-/*!******************************!*\
-  !*** ./components/Export.js ***!
-  \******************************/
+/***/ "./components/Button/Export.js":
+/*!*************************************!*\
+  !*** ./components/Button/Export.js ***!
+  \*************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -49,10 +49,10 @@ var DeleteAll = function DeleteAll() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Styled_HeaderButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Styled/HeaderButton */ "./components/Styled/HeaderButton.js");
-/* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./context/JobContext */ "./components/context/JobContext.js");
-/* harmony import */ var _lib_toJson__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lib/toJson */ "./lib/toJson.js");
-var _jsxFileName = "/home/greg/sites/jobTracking/components/Export.js";
+/* harmony import */ var _Styled_HeaderButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Styled/HeaderButton */ "./components/Styled/HeaderButton.js");
+/* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../context/JobContext */ "./components/context/JobContext.js");
+/* harmony import */ var _lib_toJson__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../lib/toJson */ "./lib/toJson.js");
+var _jsxFileName = "/home/greg/sites/jobTracking/components/Button/Export.js";
 
 
 
@@ -73,6 +73,80 @@ var Export = function Export() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Export);
+
+/***/ }),
+
+/***/ "./components/Button/Import.js":
+/*!*************************************!*\
+  !*** ./components/Button/Import.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Styled_HeaderButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Styled/HeaderButton */ "./components/Styled/HeaderButton.js");
+/* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../context/JobContext */ "./components/context/JobContext.js");
+var _jsxFileName = "/home/greg/sites/jobTracking/components/Button/Import.js";
+
+
+
+
+var Import = function Import() {
+  var inputRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_JobContext__WEBPACK_IMPORTED_MODULE_2__["JobContext"]),
+      uploadData = _useContext.uploadData;
+
+  var handleClick = function handleClick(e) {
+    e.preventDefault();
+    inputRef.current.click();
+  };
+
+  var handleOnChange = function handleOnChange(e) {
+    var file = e.target.files[0];
+    var blob = new Blob([file], {
+      type: 'application/json'
+    });
+    var fileRead = new FileReader();
+
+    fileRead.onload = function (e) {
+      uploadData(JSON.parse(e.target.result));
+    };
+
+    fileRead.readAsText(blob);
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    ref: inputRef,
+    accept: ".json",
+    type: "file",
+    style: {
+      display: 'none'
+    },
+    onChange: function onChange(e) {
+      return handleOnChange(e);
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Styled_HeaderButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    onClick: function onClick(e) {
+      return handleClick(e);
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: this
+  }, "Import JSON"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Import);
 
 /***/ }),
 
@@ -122,9 +196,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _Export__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Export */ "./components/Export.js");
-/* harmony import */ var _DeleteAll__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./DeleteAll */ "./components/DeleteAll.js");
+/* harmony import */ var _Button_Export__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Button/Export */ "./components/Button/Export.js");
+/* harmony import */ var _Button_DeleteAll__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Button/DeleteAll */ "./components/Button/DeleteAll.js");
+/* harmony import */ var _Button_Import__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Button/Import */ "./components/Button/Import.js");
 var _jsxFileName = "/home/greg/sites/jobTracking/components/Header.js";
+
 
 
 
@@ -154,43 +230,49 @@ var Header = function Header() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 36
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LeftSide, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 37
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(H1, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 38
     },
     __self: this
   }, "Job Tracking"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Span, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 39
     },
     __self: this
   }, "Stay organized by tracking the companies and jobs you are applying to.", ' ')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RightSide, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DeleteAll__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 43
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Export__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button_Import__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 44
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button_DeleteAll__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button_Export__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46
     },
     __self: this
   })));
@@ -484,6 +566,10 @@ var JobContextProvider = function JobContextProvider(_ref) {
     setState(_lib_data__WEBPACK_IMPORTED_MODULE_9__["default"]);
   };
 
+  var uploadData = function uploadData(data) {
+    setState(data);
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(JobContext.Provider, {
     value: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_4__["default"])({}, state, {
       onDragEnd: onDragEnd,
@@ -491,11 +577,12 @@ var JobContextProvider = function JobContextProvider(_ref) {
       modalSubmit: modalSubmit,
       editModal: editModal,
       deleteSubmit: deleteSubmit,
-      deleteAll: deleteAll
+      deleteAll: deleteAll,
+      uploadData: uploadData
     }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 151
+      lineNumber: 155
     },
     __self: this
   }, children);
