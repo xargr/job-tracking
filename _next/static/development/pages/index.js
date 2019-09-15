@@ -410,20 +410,20 @@ var ModalForm = function ModalForm() {
   return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Overlay, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156
+      lineNumber: 158
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Container, {
     ref: node,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 157
+      lineNumber: 159
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Close, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 160
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Pointer, {
@@ -432,20 +432,26 @@ var ModalForm = function ModalForm() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 159
+      lineNumber: 161
     },
     __self: this
-  }, "\u2613")), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(H4, {
+  }, "\u2613")), state.jobId ? react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(H4, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 161
+      lineNumber: 163
+    },
+    __self: this
+  }, "Update Job") : react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(H4, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 163
     },
     __self: this
   }, "Add Job"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Label, {
     htmlFor: "company",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162
+      lineNumber: 164
     },
     __self: this
   }, "Company"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Input, {
@@ -457,14 +463,14 @@ var ModalForm = function ModalForm() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163
+      lineNumber: 165
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Label, {
     htmlFor: "position",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 169
+      lineNumber: 171
     },
     __self: this
   }, "Position"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Input, {
@@ -476,17 +482,27 @@ var ModalForm = function ModalForm() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 170
+      lineNumber: 172
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(ButtonSave, {
+  }), state.jobId ? react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(ButtonSave, {
     disabled: !isValid,
     onClick: function onClick(e) {
       return handleSubmit(e);
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 176
+      lineNumber: 179
+    },
+    __self: this
+  }, "Update") : react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(ButtonSave, {
+    disabled: !isValid,
+    onClick: function onClick(e) {
+      return handleSubmit(e);
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 183
     },
     __self: this
   }, "Save"), state.jobId && react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(ButtonDelete, {
@@ -495,7 +511,7 @@ var ModalForm = function ModalForm() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 180
+      lineNumber: 189
     },
     __self: this
   }, "Delete")));
