@@ -141,6 +141,12 @@ const JobContextProvider = ({ children }) => {
     setState(newState);
   };
 
+  const deleteAll = () => {
+    window.confirm('Are you sure to delete all records?');
+
+    setState(data);
+  };
+
   return (
     <JobContext.Provider
       value={{
@@ -149,7 +155,8 @@ const JobContextProvider = ({ children }) => {
         modalTrigger,
         modalSubmit,
         editModal,
-        deleteSubmit
+        deleteSubmit,
+        deleteAll
       }}
     >
       {children}
