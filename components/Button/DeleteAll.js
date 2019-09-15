@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import HeaderButton from './Styled/HeaderButton';
-import { JobContext } from './context/JobContext';
+import HeaderButton from '../Styled/HeaderButton';
+import { JobContext } from '../context/JobContext';
 
 const DeleteAll = () => {
   const { deleteAll } = useContext(JobContext);

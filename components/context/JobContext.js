@@ -147,6 +147,10 @@ const JobContextProvider = ({ children }) => {
     setState(data);
   };
 
+  const uploadData = data => {
+    setState(data);
+  };
+
   return (
     <JobContext.Provider
       value={{
@@ -156,7 +160,8 @@ const JobContextProvider = ({ children }) => {
         modalSubmit,
         editModal,
         deleteSubmit,
-        deleteAll
+        deleteAll,
+        uploadData
       }}
     >
       {children}

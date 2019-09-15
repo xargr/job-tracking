@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Export from './Export';
-import DeleteAll from './DeleteAll';
+import Export from './Button/Export';
+import DeleteAll from './Button/DeleteAll';
+import Import from './Button/Import';
 
 const Container = styled.div`
   grid-row: header;
@@ -40,6 +41,7 @@ const Header = () => (
       </Span>
     </LeftSide>
     <RightSide>
+      <Import />
       <DeleteAll />
       <Export />
     </RightSide>
