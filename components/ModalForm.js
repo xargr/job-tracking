@@ -109,7 +109,9 @@ const ButtonDelete = styled.button`
 `;
 
 const ModalForm = () => {
-  const { modalData, modalTrigger, modalSubmit, deleteSubmit } = useContext(JobContext);
+  const { modalData, modalTrigger, modalSubmit, deleteSubmit } = useContext(
+    JobContext
+  );
 
   const [state, setState] = useState({
     ...modalData
@@ -158,7 +160,7 @@ const ModalForm = () => {
         <Close>
           <Pointer onClick={() => modalTrigger(null)}>&#9747;</Pointer>
         </Close>
-        <H4>Add Job</H4>
+        {state.jobId ? <H4>Update Job</H4> : <H4>Add Job</H4>}
         <Label htmlFor="company">Company</Label>
         <Input
           name="company"
@@ -173,9 +175,16 @@ const ModalForm = () => {
           autoComplete="off"
           onChange={e => handleForm(e)}
         />
-        <ButtonSave disabled={!isValid} onClick={e => handleSubmit(e)}>
-          Save
-        </ButtonSave>
+        {state.jobId ? (
+          <ButtonSave disabled={!isValid} onClick={e => handleSubmit(e)}>
+            Update
+          </ButtonSave>
+        ) : (
+          <ButtonSave disabled={!isValid} onClick={e => handleSubmit(e)}>
+            Save
+          </ButtonSave>
+        )}
+
         {state.jobId && (
           <ButtonDelete
             onClick={e => handleDelete(e, state.jobId, state.columnId)}
