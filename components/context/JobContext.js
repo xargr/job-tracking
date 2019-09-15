@@ -122,9 +122,35 @@ const JobContextProvider = ({ children }) => {
     setState(newState);
   };
 
+  const deleteSubmit = (jobId, columnId) => {
+    const oldState = Object.assign({}, state);
+
+    delete oldState.jobs[jobId];
+
+    const newColumnJobs = oldState.columns[columnId].jobs.filter(
+      el => el !== jobId
+    );
+
+    oldState.columns[columnId].jobs = [...newColumnJobs];
+
+    const newState = {
+      ...oldState,
+      isModalOpen: !state.isModalOpen
+    };
+
+    setState(newState);
+  };
+
   return (
     <JobContext.Provider
-      value={{ ...state, onDragEnd, modalTrigger, modalSubmit, editModal }}
+      value={{
+        ...state,
+        onDragEnd,
+        modalTrigger,
+        modalSubmit,
+        editModal,
+        deleteSubmit
+      }}
     >
       {children}
     </JobContext.Provider>

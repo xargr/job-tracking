@@ -109,7 +109,7 @@ const ButtonDelete = styled.button`
 `;
 
 const ModalForm = () => {
-  const { modalData, modalTrigger, modalSubmit } = useContext(JobContext);
+  const { modalData, modalTrigger, modalSubmit, deleteSubmit } = useContext(JobContext);
 
   const [state, setState] = useState({
     ...modalData
@@ -149,7 +149,7 @@ const ModalForm = () => {
 
   const handleDelete = (e, jobId, columnId) => {
     e.preventDefault();
-    console.log(jobId, columnId);
+    deleteSubmit(jobId, columnId);
   };
 
   return (
