@@ -193,89 +193,99 @@ var Footer = function Footer() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _Button_Export__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Button/Export */ "./components/Button/Export.js");
-/* harmony import */ var _Button_DeleteAll__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Button/DeleteAll */ "./components/Button/DeleteAll.js");
-/* harmony import */ var _Button_Import__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Button/Import */ "./components/Button/Import.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./context/JobContext */ "./components/context/JobContext.js");
+/* harmony import */ var _Button_Export__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Button/Export */ "./components/Button/Export.js");
+/* harmony import */ var _Button_DeleteAll__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Button/DeleteAll */ "./components/Button/DeleteAll.js");
+/* harmony import */ var _Button_Import__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Button/Import */ "./components/Button/Import.js");
+
 var _jsxFileName = "/home/greg/sites/jobTracking/components/Header.js";
 
 
 
 
 
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "Header__Container",
   componentId: "sc-4rw5b7-0"
 })(["grid-row:header;padding:2em;"]);
-var H1 = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1.withConfig({
+var H1 = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1.withConfig({
   displayName: "Header__H1",
   componentId: "sc-4rw5b7-1"
 })(["font-size:2.3em;font-weight:700;margin-bottom:0.25em;font-family:'Red Hat Text',sans-serif;"]);
-var Span = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].span.withConfig({
+var Span = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].span.withConfig({
   displayName: "Header__Span",
   componentId: "sc-4rw5b7-2"
 })(["font-style:italic;"]);
-var LeftSide = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+var LeftSide = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "Header__LeftSide",
   componentId: "sc-4rw5b7-3"
 })(["width:50%;float:left;"]);
-var RightSide = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+var RightSide = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "Header__RightSide",
   componentId: "sc-4rw5b7-4"
 })(["width:50%;float:right;text-align:right;margin-top:30px;"]);
 
 var Header = function Header() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, {
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_context_JobContext__WEBPACK_IMPORTED_MODULE_3__["JobContext"]),
+      jobs = _useContext.jobs;
+
+  var jobsCount = jobs && _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(jobs).length;
+
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 41
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LeftSide, {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(LeftSide, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 42
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(H1, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: this
-  }, "Job Tracking"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Span, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: this
-  }, "Stay organized by tracking the companies and jobs you are applying to.", ' ')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RightSide, {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(H1, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 43
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button_Import__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, "Job Tracking"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Span, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 44
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button_DeleteAll__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, "Stay organized by tracking the companies and jobs you are applying to.", ' ')), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(RightSide, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 48
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button_Export__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Button_Import__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 49
     },
     __self: this
-  })));
+  }), jobsCount > 0 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Button_DeleteAll__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Button_Export__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: this
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -633,6 +643,12 @@ var data = {
       company: 'UBS',
       position: 'Lead Front-end',
       date: 1566681661474
+    },
+    'job-6': {
+      id: 'job-6',
+      company: 'RaiseNow',
+      position: 'Senior Front-end',
+      date: 1566681661474
     }
   },
   columns: {
@@ -649,7 +665,7 @@ var data = {
     'column-3': {
       id: 'column-3',
       title: 'Interview',
-      jobs: []
+      jobs: ['job-6']
     },
     'column-4': {
       id: 'column-4',
@@ -684,15 +700,21 @@ var data = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/array/from */ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/date/now */ "./node_modules/@babel/runtime-corejs2/core-js/date/now.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/array/from */ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_4__);
+
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (result, state, setState) {
-  var _objectSpread3;
+  var _objectSpread4;
 
   var destination = result.destination,
       source = result.source,
@@ -710,41 +732,50 @@ __webpack_require__.r(__webpack_exports__);
   var finish = state.columns[destination.droppableId];
 
   if (start === finish) {
-    var newJobIds = _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_2___default()(start.jobs);
+    var newJobIds = _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_4___default()(start.jobs);
 
     newJobIds.splice(source.index, 1);
     newJobIds.splice(destination.index, 0, draggableId);
 
-    var newColumn = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, start, {
+    var newColumn = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, start, {
       jobs: newJobIds
     });
 
-    var _newState = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state, {
-      columns: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state.columns, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({}, newColumn.id, newColumn))
+    var _newState = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, state, {
+      columns: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, state.columns, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({}, newColumn.id, newColumn))
     });
 
     setState(_newState);
     return;
   }
 
-  var startJobIds = _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_2___default()(start.jobs);
+  var startJobIds = _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_4___default()(start.jobs);
 
   startJobIds.splice(source.index, 1);
 
-  var newStart = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, start, {
+  var newStart = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, start, {
     jobs: startJobIds
   });
 
-  var finishJobIds = _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_2___default()(finish.jobs);
+  var finishJobIds = _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_4___default()(finish.jobs);
 
   finishJobIds.splice(destination.index, 0, draggableId);
 
-  var newFinish = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, finish, {
+  var newFinish = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, finish, {
     jobs: finishJobIds
   });
 
-  var newState = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state, {
-    columns: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state.columns, (_objectSpread3 = {}, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_objectSpread3, newStart.id, newStart), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_objectSpread3, newFinish.id, newFinish), _objectSpread3))
+  var oldState = _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_1___default()({}, state);
+
+  var oldJobs = oldState.jobs;
+
+  var updatedDateJob = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, oldJobs[draggableId], {
+    date: _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_0___default()()
+  });
+
+  var newState = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, state, {
+    jobs: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, oldJobs, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({}, draggableId, Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, updatedDateJob))),
+    columns: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, state.columns, (_objectSpread4 = {}, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_objectSpread4, newStart.id, newStart), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_objectSpread4, newFinish.id, newFinish), _objectSpread4))
   });
 
   setState(newState);
