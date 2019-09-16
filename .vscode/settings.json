@@ -1,0 +1,15 @@
+{
+  "eslint.enable": true,
+  "eslint.options": {
+    "configFile": "/home/greg/sites/jobTracking/.eslintrc.json",
+    "extensinons": [".ts", ".js", ".tsx", ".jsx"]
+  },
+  "eslint.packageManager": "npm",
+  "eslint.run": "onType",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ]
+}

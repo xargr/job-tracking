@@ -20,7 +20,7 @@ const Header = () => {
       <LeftSide>
         <H1>Job Tracking</H1>
         <Span>
-          Stay organized by tracking the companies and jobs you are applying to.{' '}
+          Stay organized by tracking the companies and jobs you are applying to.
         </Span>
       </LeftSide>
       <RightSide>

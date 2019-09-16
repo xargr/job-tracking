@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HeaderButton = styled.button`
+const HeaderButton = styled.button`
   background: white;
   border: 1px dashed #2696f3;
   padding: 8px 15px;
@@ -10,3 +10,5 @@ export const HeaderButton = styled.button`
   cursor: pointer;
   margin-right: 10px;
 `;
+
+export default HeaderButton;

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { Draggable } from 'react-beautiful-dnd';
 import moment from 'moment';
 import { JobContext } from '../context/JobContext';
@@ -24,6 +25,17 @@ const Job = ({ job, index, columnId }) => {
       )}
     </Draggable>
   );
+};
+
+Job.propTypes = {
+  job: PropTypes.shape({
+    id: PropTypes.string,
+    company: PropTypes.string,
+    position: PropTypes.string,
+    date: PropTypes.number
+  }).isRequired,
+  columnId: PropTypes.string,
+  index: PropTypes.number
 };
 
 export default Job;

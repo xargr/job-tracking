@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import uuidv4 from 'uuid/v4';
 import data from '../../lib/data';
 import dragAndDrop from '../../lib/dragAndDrop';
@@ -13,21 +14,22 @@ const JobContextProvider = ({ children }) => {
   useEffect(() => {
     if (isInitialMount.current) {
       isInitialMount.current = false;
-      const initialState = JSON.parse(localStorage.getItem('data')) || data;
+      const initialState =
+        JSON.parse(window.localStorage.getItem('data')) || data;
       setState(initialState);
     } else {
-      localStorage.setItem('data', JSON.stringify(state));
+      window.localStorage.setItem('data', JSON.stringify(state));
     }
   });
 
   const onDragEnd = result => dragAndDrop(result, state, setState);
 
-  const modalTrigger = data => {
+  const modalTrigger = columnId => {
     setState({
       ...state,
       isModalOpen: !state.isModalOpen,
       modalData: {
-        columnId: data,
+        columnId,
         company: '',
         position: '',
         jobId: null
@@ -112,7 +114,7 @@ const JobContextProvider = ({ children }) => {
       ...state,
       isModalOpen: !state.isModalOpen,
       modalData: {
-        columnId: columnId,
+        columnId,
         company,
         position,
         jobId: id
@@ -123,7 +125,7 @@ const JobContextProvider = ({ children }) => {
   };
 
   const deleteSubmit = (jobId, columnId) => {
-    const oldState = Object.assign({}, state);
+    const oldState = { ...state };
 
     delete oldState.jobs[jobId];
 
@@ -142,13 +144,14 @@ const JobContextProvider = ({ children }) => {
   };
 
   const deleteAll = () => {
+    // eslint-disable-next-line no-alert
     window.confirm('Are you sure to delete all records?');
 
     setState(data);
   };
 
-  const uploadData = data => {
-    setState(data);
+  const uploadData = cxt => {
+    setState(cxt);
   };
 
   return (
@@ -167,6 +170,10 @@ const JobContextProvider = ({ children }) => {
       {children}
     </JobContext.Provider>
   );
+};
+
+JobContextProvider.propTypes = {
+  children: PropTypes.element.isRequired
 };
 
 export default JobContextProvider;

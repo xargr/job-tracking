@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ContainerJobContain = styled.div`
+const ContainerJobContain = styled.div`
   grid-row: content;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -8,3 +8,5 @@ export const ContainerJobContain = styled.div`
   background-color: #f2f5fa;
   padding: 2em 0;
 `;
+
+export default ContainerJobContain;

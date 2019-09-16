@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Droppable } from 'react-beautiful-dnd';
 import Job from './Job';
 import {
@@ -28,8 +29,8 @@ const Column = ({ jobs, column, index, modalTrigger }) => (
           isDraggingOver={snapshot.isDraggingOver}
         >
           {jobs &&
-            jobs.map((job, index) => (
-              <Job key={index} job={job} index={index} columnId={column.id} />
+            jobs.map((job, i) => (
+              <Job key={job.id} job={job} index={i} columnId={column.id} />
             ))}
           {provided.placeholder}
         </JobList>
@@ -37,5 +38,23 @@ const Column = ({ jobs, column, index, modalTrigger }) => (
     )}
   </Droppable>
 );
+
+Column.propTypes = {
+  jobs: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      company: PropTypes.string,
+      position: PropTypes.string,
+      date: PropTypes.number
+    })
+  ),
+  column: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    jobs: PropTypes.arrayOf(PropTypes.string)
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+  modalTrigger: PropTypes.func.isRequired
+};
 
 export default Column;

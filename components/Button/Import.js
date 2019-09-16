@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from 'react';
-import { HeaderButton } from '../Styled/HeaderButton';
+import HeaderButton from '../Styled/HeaderButton';
 import { JobContext } from '../context/JobContext';
 
 const Import = () => {
@@ -14,11 +14,11 @@ const Import = () => {
 
   const handleOnChange = e => {
     const file = e.target.files[0];
-    const blob = new Blob([file], { type: 'application/json' });
-    const fileRead = new FileReader();
+    const blob = new window.Blob([file], { type: 'application/json' });
+    const fileRead = new window.FileReader();
 
-    fileRead.onload = e => {
-      uploadData(JSON.parse(e.target.result));
+    fileRead.onload = event => {
+      uploadData(JSON.parse(event.target.result));
     };
 
     fileRead.readAsText(blob);

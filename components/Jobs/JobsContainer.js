@@ -3,7 +3,7 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import Column from './Column';
 import { JobContext } from '../context/JobContext';
 import ModalForm from '../ModalForm';
-import { ContainerJobContain } from '../Styled/StyleJobContainer';
+import ContainerJobContain from '../Styled/StyleJobContainer';
 
 const JobsContainer = () => {
   const {
