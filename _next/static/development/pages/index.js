@@ -12,104 +12,82 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-beautiful-dnd */ "./node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.esm.js");
-/* harmony import */ var _Job__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Job */ "./components/Jobs/Job.js");
+/* harmony import */ var react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-beautiful-dnd */ "./node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.esm.js");
+/* harmony import */ var _Job__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Job */ "./components/Jobs/Job.js");
+/* harmony import */ var _Styled_StyleColumn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Styled/StyleColumn */ "./components/Styled/StyleColumn.js");
 
 var _jsxFileName = "/home/greg/sites/jobTracking/components/Jobs/Column.js";
 
 
 
 
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
-  displayName: "Column__Container",
-  componentId: "vqkxbn-0"
-})(["border-radius:2px;padding:1em;"]);
-var H3 = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h3.withConfig({
-  displayName: "Column__H3",
-  componentId: "vqkxbn-1"
-})(["padding:8px;font-size:1.15em;font-weight:700;text-align:center;font-family:'Red Hat Text',sans-serif;span{background:#dde3f0;padding:0px 7px;margin-right:5px;border-radius:50%;height:10px;width:10px;line-height:10px;text-align:center;font-size:0.8em;font-weight:400;}"]);
-var JobList = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
-  displayName: "Column__JobList",
-  componentId: "vqkxbn-2"
-})(["padding:8px;min-height:60vh;overflow-y:auto;height:60vh;border:", ";"], function (props) {
-  return props.isDraggingOver ? '1px dotted grey' : 'none';
-});
-var Center = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
-  displayName: "Column__Center",
-  componentId: "vqkxbn-3"
-})(["text-align:center;"]);
-var Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withConfig({
-  displayName: "Column__Button",
-  componentId: "vqkxbn-4"
-})(["color:#2696f3;border:1px dashed #2696f3;background-color:transparent;margin:1em;padding:0.75em 1.5em;font-family:'Red Hat Text',sans-serif;font-weight:400;cursor:pointer;font-size:1em;&:hover{background-color:#2696f3;color:#fff;}&:focus{outline:none;}"]);
 
 var Column = function Column(_ref) {
   var jobs = _ref.jobs,
       column = _ref.column,
       index = _ref.index,
       modalTrigger = _ref.modalTrigger;
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_3__["Droppable"], {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_2__["Droppable"], {
     droppableId: column.id,
     key: column.id,
     index: index,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 13
     },
     __self: this
   }, function (provided, snapshot) {
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleColumn__WEBPACK_IMPORTED_MODULE_4__["ContainerColumn"], {
       isDraggingOver: snapshot.isDraggingOver,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 15
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(H3, {
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleColumn__WEBPACK_IMPORTED_MODULE_4__["H3"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 16
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 17
       },
       __self: this
-    }, jobs.length), column.title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Center, {
+    }, jobs.length), column.title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleColumn__WEBPACK_IMPORTED_MODULE_4__["Center"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71
+        lineNumber: 20
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Button, {
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleColumn__WEBPACK_IMPORTED_MODULE_4__["Button"], {
       onClick: function onClick() {
         return modalTrigger(column.id);
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 21
       },
       __self: this
-    }, "+ Add job")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(JobList, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, provided.draggableProps, provided.dragHandleProps, {
+    }, "+ Add job")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleColumn__WEBPACK_IMPORTED_MODULE_4__["JobList"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, provided.draggableProps, provided.dragHandleProps, {
       ref: provided.innerRef,
       isDraggingOver: snapshot.isDraggingOver,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 75
+        lineNumber: 24
       },
       __self: this
     }), jobs && jobs.map(function (job, index) {
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Job__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Job__WEBPACK_IMPORTED_MODULE_3__["default"], {
         key: index,
         job: job,
         index: index,
         columnId: column.id,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 32
         },
         __self: this
       });
@@ -133,11 +111,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-beautiful-dnd */ "./node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.esm.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../context/JobContext */ "./components/context/JobContext.js");
+/* harmony import */ var react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-beautiful-dnd */ "./node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.esm.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../context/JobContext */ "./components/context/JobContext.js");
+/* harmony import */ var _Styled_StyleJob__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Styled/StyleJob */ "./components/Styled/StyleJob.js");
 
 var _jsxFileName = "/home/greg/sites/jobTracking/components/Jobs/Job.js";
 
@@ -145,44 +123,26 @@ var _jsxFileName = "/home/greg/sites/jobTracking/components/Jobs/Job.js";
 
 
 
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
-  displayName: "Job__Container",
-  componentId: "avkz8q-0"
-})(["border-radius:2px;margin-bottom:8px;padding:8px;background-color:", ";font-family:'Red Hat Text',sans-serif;&:focus{border:none;}"], function (props) {
-  return props.isDragging ? 'lightgreen' : 'white';
-});
-var Company = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
-  displayName: "Job__Company",
-  componentId: "avkz8q-1"
-})([""]);
-var Position = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
-  displayName: "Job__Position",
-  componentId: "avkz8q-2"
-})(["font-size:0.9em;margin-top:8px;"]);
-var Ago = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
-  displayName: "Job__Ago",
-  componentId: "avkz8q-3"
-})(["font-size:0.85em;margin-top:20px;text-align:right;"]);
 
 var Job = function Job(_ref) {
   var job = _ref.job,
       index = _ref.index,
       columnId = _ref.columnId;
 
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_context_JobContext__WEBPACK_IMPORTED_MODULE_5__["JobContext"]),
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_context_JobContext__WEBPACK_IMPORTED_MODULE_4__["JobContext"]),
       editModal = _useContext.editModal;
 
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_3__["Draggable"], {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_2__["Draggable"], {
     draggableId: job.id,
     key: job.id,
     index: index,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 11
     },
     __self: this
   }, function (provided, snapshot) {
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleJob__WEBPACK_IMPORTED_MODULE_5__["ContainerJob"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
       onDoubleClick: function onDoubleClick() {
         return editModal(job, columnId);
       },
@@ -191,28 +151,28 @@ var Job = function Job(_ref) {
       isDragging: snapshot.isDragging,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 13
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Company, {
+    }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleJob__WEBPACK_IMPORTED_MODULE_5__["Company"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 20
       },
       __self: this
-    }, job.company), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Position, {
+    }, job.company), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleJob__WEBPACK_IMPORTED_MODULE_5__["Position"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 21
       },
       __self: this
-    }, job.position), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Ago, {
+    }, job.position), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleJob__WEBPACK_IMPORTED_MODULE_5__["Ago"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 22
       },
       __self: this
-    }, moment__WEBPACK_IMPORTED_MODULE_4___default()(job.date).fromNow()));
+    }, moment__WEBPACK_IMPORTED_MODULE_3___default()(job.date).fromNow()));
   });
 };
 
@@ -232,10 +192,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-beautiful-dnd */ "./node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.esm.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _Column__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Column */ "./components/Jobs/Column.js");
-/* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../context/JobContext */ "./components/context/JobContext.js");
-/* harmony import */ var _ModalForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../ModalForm */ "./components/ModalForm.js");
+/* harmony import */ var _Column__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Column */ "./components/Jobs/Column.js");
+/* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context/JobContext */ "./components/context/JobContext.js");
+/* harmony import */ var _ModalForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ModalForm */ "./components/ModalForm.js");
+/* harmony import */ var _Styled_StyleJobContainer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Styled/StyleJobContainer */ "./components/Styled/StyleJobContainer.js");
 var _jsxFileName = "/home/greg/sites/jobTracking/components/Jobs/JobsContainer.js";
 
 
@@ -243,13 +203,9 @@ var _jsxFileName = "/home/greg/sites/jobTracking/components/Jobs/JobsContainer.j
 
 
 
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
-  displayName: "JobsContainer__Container",
-  componentId: "sc-1sf0djg-0"
-})(["grid-row:content;display:grid;grid-template-columns:repeat(5,1fr);grid-column-gap:1em;background-color:#f2f5fa;padding:2em 0;"]);
 
 var JobsContainer = function JobsContainer() {
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_JobContext__WEBPACK_IMPORTED_MODULE_4__["JobContext"]),
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_JobContext__WEBPACK_IMPORTED_MODULE_3__["JobContext"]),
       columnOrder = _useContext.columnOrder,
       columns = _useContext.columns,
       jobs = _useContext.jobs,
@@ -257,17 +213,17 @@ var JobsContainer = function JobsContainer() {
       modalTrigger = _useContext.modalTrigger,
       isModalOpen = _useContext.isModalOpen;
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Styled_StyleJobContainer__WEBPACK_IMPORTED_MODULE_5__["ContainerJobContain"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 19
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_1__["DragDropContext"], {
     onDragEnd: onDragEnd,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 20
     },
     __self: this
   }, columnOrder && columnOrder.map(function (columnId, index) {
@@ -275,7 +231,7 @@ var JobsContainer = function JobsContainer() {
     var jobsList = column.jobs.map(function (jobId) {
       return jobs[jobId];
     });
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Column__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Column__WEBPACK_IMPORTED_MODULE_2__["default"], {
       key: column.id,
       column: column,
       jobs: jobsList,
@@ -283,14 +239,14 @@ var JobsContainer = function JobsContainer() {
       modalTrigger: modalTrigger,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 27
       },
       __self: this
     });
-  })), isModalOpen && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ModalForm__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  })), isModalOpen && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ModalForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 37
     },
     __self: this
   }));
@@ -314,9 +270,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _lib_isModalValid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../lib/isModalValid */ "./lib/isModalValid.js");
-/* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./context/JobContext */ "./components/context/JobContext.js");
+/* harmony import */ var _lib_isModalValid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lib/isModalValid */ "./lib/isModalValid.js");
+/* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./context/JobContext */ "./components/context/JobContext.js");
+/* harmony import */ var _Styled_StyleModalForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Styled/StyleModalForm */ "./components/Styled/StyleModalForm.js");
 
 
 
@@ -325,45 +281,9 @@ var _jsxFileName = "/home/greg/sites/jobTracking/components/ModalForm.js";
 
 
 
-var Overlay = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.withConfig({
-  displayName: "ModalForm__Overlay",
-  componentId: "sc-1vszn36-0"
-})(["background-color:rgba(51,41,41,0.65);position:fixed;min-height:100vh;min-width:100vw;z-index:10;top:0;left:0;"]);
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.withConfig({
-  displayName: "ModalForm__Container",
-  componentId: "sc-1vszn36-1"
-})(["width:360px;height:auto;position:absolute;background:#fff;top:calc(50% - 160px);left:calc(50% - 180px);border-radius:5px;padding:1em;"]);
-var Close = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.withConfig({
-  displayName: "ModalForm__Close",
-  componentId: "sc-1vszn36-2"
-})(["margin:10px 0;text-align:right;font-size:1.5em;height:30px;width:100%;float:right;line-height:30px;font-weight:700;"]);
-var Pointer = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div.withConfig({
-  displayName: "ModalForm__Pointer",
-  componentId: "sc-1vszn36-3"
-})(["width:30px;height:30px;float:right;text-align:center;cursor:pointer;"]);
-var H4 = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].h4.withConfig({
-  displayName: "ModalForm__H4",
-  componentId: "sc-1vszn36-4"
-})(["font-weight:700;font-size:1.2em;font-family:sans-serif;margin:0px 0px 20px 20px;"]);
-var Label = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].label.withConfig({
-  displayName: "ModalForm__Label",
-  componentId: "sc-1vszn36-5"
-})(["display:block;margin-bottom:10px;font-family:'Red Hat Text',sans-serif;color:rgb(152,161,179);margin:0px 0px 10px 15px;"]);
-var Input = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].input.withConfig({
-  displayName: "ModalForm__Input",
-  componentId: "sc-1vszn36-6"
-})(["display:block;height:30px;width:90%;margin:0 auto 10px;border:none;background-color:rgb(242,245,250);border-radius:0px;&:focus{outline:none;border-bottom:2px solid rgb(33,150,243);}"]);
-var ButtonSave = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].button.withConfig({
-  displayName: "ModalForm__ButtonSave",
-  componentId: "sc-1vszn36-7"
-})(["margin:20px 0;float:right;width:75px;height:35px;cursor:pointer;background-color:rgb(22,138,230);outline:none;border:1px solid rgb(22,138,230);border-radius:2px;color:#fff;font-weight:700;font-size:1em;"]);
-var ButtonDelete = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].button.withConfig({
-  displayName: "ModalForm__ButtonDelete",
-  componentId: "sc-1vszn36-8"
-})(["margin:20px 10px 0px 0px;float:right;width:75px;height:35px;cursor:pointer;background-color:rgba(230,22,32,0.85);outline:none;border:1px solid rgba(230,22,32,0.85);border-radius:2px;color:#fff;font-weight:700;font-size:1em;"]);
 
 var ModalForm = function ModalForm() {
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_3__["useContext"])(_context_JobContext__WEBPACK_IMPORTED_MODULE_6__["JobContext"]),
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_3__["useContext"])(_context_JobContext__WEBPACK_IMPORTED_MODULE_5__["JobContext"]),
       modalData = _useContext.modalData,
       modalTrigger = _useContext.modalTrigger,
       modalSubmit = _useContext.modalSubmit,
@@ -394,7 +314,7 @@ var ModalForm = function ModalForm() {
 
   var handleForm = function handleForm(e) {
     setState(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({}, e.target.name, e.target.value)));
-    Object(_lib_isModalValid__WEBPACK_IMPORTED_MODULE_5__["default"])(state, setIsValid);
+    Object(_lib_isModalValid__WEBPACK_IMPORTED_MODULE_4__["default"])(state, setIsValid);
   };
 
   var handleSubmit = function handleSubmit(e) {
@@ -407,54 +327,54 @@ var ModalForm = function ModalForm() {
     deleteSubmit(jobId, columnId);
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Overlay, {
+  return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Styled_StyleModalForm__WEBPACK_IMPORTED_MODULE_6__["Overlay"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 69
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Container, {
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Styled_StyleModalForm__WEBPACK_IMPORTED_MODULE_6__["ContainerModalForm"], {
     ref: node,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 159
+      lineNumber: 70
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Close, {
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Styled_StyleModalForm__WEBPACK_IMPORTED_MODULE_6__["Close"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 160
+      lineNumber: 71
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Pointer, {
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Styled_StyleModalForm__WEBPACK_IMPORTED_MODULE_6__["Pointer"], {
     onClick: function onClick() {
       return modalTrigger(null);
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 161
+      lineNumber: 72
     },
     __self: this
-  }, "\u2613")), state.jobId ? react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(H4, {
+  }, "\u2613")), state.jobId ? react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Styled_StyleModalForm__WEBPACK_IMPORTED_MODULE_6__["H4"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163
+      lineNumber: 74
     },
     __self: this
-  }, "Update Job") : react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(H4, {
+  }, "Update Job") : react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Styled_StyleModalForm__WEBPACK_IMPORTED_MODULE_6__["H4"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163
+      lineNumber: 74
     },
     __self: this
-  }, "Add Job"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Label, {
+  }, "Add Job"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Styled_StyleModalForm__WEBPACK_IMPORTED_MODULE_6__["Label"], {
     htmlFor: "company",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 164
+      lineNumber: 75
     },
     __self: this
-  }, "Company"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Input, {
+  }, "Company"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Styled_StyleModalForm__WEBPACK_IMPORTED_MODULE_6__["Input"], {
     name: "company",
     value: state.company,
     autoComplete: "off",
@@ -463,17 +383,17 @@ var ModalForm = function ModalForm() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 165
+      lineNumber: 76
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Label, {
+  }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Styled_StyleModalForm__WEBPACK_IMPORTED_MODULE_6__["Label"], {
     htmlFor: "position",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 171
+      lineNumber: 82
     },
     __self: this
-  }, "Position"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Input, {
+  }, "Position"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Styled_StyleModalForm__WEBPACK_IMPORTED_MODULE_6__["Input"], {
     name: "position",
     value: state.position,
     autoComplete: "off",
@@ -482,42 +402,197 @@ var ModalForm = function ModalForm() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 172
+      lineNumber: 83
     },
     __self: this
-  }), state.jobId ? react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(ButtonSave, {
+  }), state.jobId ? react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Styled_StyleModalForm__WEBPACK_IMPORTED_MODULE_6__["ButtonSave"], {
     disabled: !isValid,
     onClick: function onClick(e) {
       return handleSubmit(e);
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 179
+      lineNumber: 90
     },
     __self: this
-  }, "Update") : react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(ButtonSave, {
+  }, "Update") : react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Styled_StyleModalForm__WEBPACK_IMPORTED_MODULE_6__["ButtonSave"], {
     disabled: !isValid,
     onClick: function onClick(e) {
       return handleSubmit(e);
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 183
+      lineNumber: 94
     },
     __self: this
-  }, "Save"), state.jobId && react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(ButtonDelete, {
+  }, "Save"), state.jobId && react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Styled_StyleModalForm__WEBPACK_IMPORTED_MODULE_6__["ButtonDelete"], {
     onClick: function onClick(e) {
       return handleDelete(e, state.jobId, state.columnId);
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 189
+      lineNumber: 100
     },
     __self: this
   }, "Delete")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ModalForm);
+
+/***/ }),
+
+/***/ "./components/Styled/StyleColumn.js":
+/*!******************************************!*\
+  !*** ./components/Styled/StyleColumn.js ***!
+  \******************************************/
+/*! exports provided: ContainerColumn, H3, Center, Button, JobList */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContainerColumn", function() { return ContainerColumn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H3", function() { return H3; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Center", function() { return Center; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Button", function() { return Button; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobList", function() { return JobList; });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+var ContainerColumn = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
+  displayName: "StyleColumn__ContainerColumn",
+  componentId: "sc-5jhwh-0"
+})(["border-radius:2px;padding:1em;"]);
+var H3 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3.withConfig({
+  displayName: "StyleColumn__H3",
+  componentId: "sc-5jhwh-1"
+})(["padding:8px;font-size:1.15em;font-weight:700;text-align:center;font-family:'Red Hat Text',sans-serif;span{background:#dde3f0;padding:0px 7px;margin-right:5px;border-radius:50%;height:10px;width:10px;line-height:10px;text-align:center;font-size:0.8em;font-weight:400;}"]);
+var Center = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
+  displayName: "StyleColumn__Center",
+  componentId: "sc-5jhwh-2"
+})(["text-align:center;"]);
+var Button = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button.withConfig({
+  displayName: "StyleColumn__Button",
+  componentId: "sc-5jhwh-3"
+})(["color:#2696f3;border:1px dashed #2696f3;background-color:transparent;margin:1em;padding:0.75em 1.5em;font-family:'Red Hat Text',sans-serif;font-weight:400;cursor:pointer;font-size:1em;&:hover{background-color:#2696f3;color:#fff;}&:focus{outline:none;}"]);
+var JobList = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
+  displayName: "StyleColumn__JobList",
+  componentId: "sc-5jhwh-4"
+})(["padding:8px;min-height:60vh;overflow-y:auto;height:60vh;border:", ";"], function (props) {
+  return props.isDraggingOver ? '1px dotted grey' : 'none';
+});
+
+/***/ }),
+
+/***/ "./components/Styled/StyleJob.js":
+/*!***************************************!*\
+  !*** ./components/Styled/StyleJob.js ***!
+  \***************************************/
+/*! exports provided: ContainerJob, Company, Position, Ago */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContainerJob", function() { return ContainerJob; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Company", function() { return Company; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Position", function() { return Position; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Ago", function() { return Ago; });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+var ContainerJob = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
+  displayName: "StyleJob__ContainerJob",
+  componentId: "sc-14fedq9-0"
+})(["border-radius:2px;margin-bottom:8px;padding:8px;background-color:", ";font-family:'Red Hat Text',sans-serif;&:focus{border:none;}"], function (props) {
+  return props.isDragging ? 'lightgreen' : 'white';
+});
+var Company = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
+  displayName: "StyleJob__Company",
+  componentId: "sc-14fedq9-1"
+})([""]);
+var Position = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
+  displayName: "StyleJob__Position",
+  componentId: "sc-14fedq9-2"
+})(["font-size:0.9em;margin-top:8px;"]);
+var Ago = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
+  displayName: "StyleJob__Ago",
+  componentId: "sc-14fedq9-3"
+})(["font-size:0.85em;margin-top:20px;text-align:right;"]);
+
+/***/ }),
+
+/***/ "./components/Styled/StyleJobContainer.js":
+/*!************************************************!*\
+  !*** ./components/Styled/StyleJobContainer.js ***!
+  \************************************************/
+/*! exports provided: ContainerJobContain */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContainerJobContain", function() { return ContainerJobContain; });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+var ContainerJobContain = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
+  displayName: "StyleJobContainer__ContainerJobContain",
+  componentId: "sc-4b946y-0"
+})(["grid-row:content;display:grid;grid-template-columns:repeat(5,1fr);grid-column-gap:1em;background-color:#f2f5fa;padding:2em 0;"]);
+
+/***/ }),
+
+/***/ "./components/Styled/StyleModalForm.js":
+/*!*********************************************!*\
+  !*** ./components/Styled/StyleModalForm.js ***!
+  \*********************************************/
+/*! exports provided: Overlay, ContainerModalForm, Close, Pointer, H4, Label, Input, ButtonSave, ButtonDelete */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Overlay", function() { return Overlay; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContainerModalForm", function() { return ContainerModalForm; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Close", function() { return Close; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Pointer", function() { return Pointer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H4", function() { return H4; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Label", function() { return Label; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Input", function() { return Input; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ButtonSave", function() { return ButtonSave; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ButtonDelete", function() { return ButtonDelete; });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+var Overlay = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
+  displayName: "StyleModalForm__Overlay",
+  componentId: "jrigbp-0"
+})(["background-color:rgba(51,41,41,0.65);position:fixed;min-height:100vh;min-width:100vw;z-index:10;top:0;left:0;"]);
+var ContainerModalForm = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
+  displayName: "StyleModalForm__ContainerModalForm",
+  componentId: "jrigbp-1"
+})(["width:360px;height:auto;position:absolute;background:#fff;top:calc(50% - 160px);left:calc(50% - 180px);border-radius:5px;padding:1em;"]);
+var Close = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
+  displayName: "StyleModalForm__Close",
+  componentId: "jrigbp-2"
+})(["margin:10px 0;text-align:right;font-size:1.5em;height:30px;width:100%;float:right;line-height:30px;font-weight:700;"]);
+var Pointer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
+  displayName: "StyleModalForm__Pointer",
+  componentId: "jrigbp-3"
+})(["width:30px;height:30px;float:right;text-align:center;cursor:pointer;"]);
+var H4 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h4.withConfig({
+  displayName: "StyleModalForm__H4",
+  componentId: "jrigbp-4"
+})(["font-weight:700;font-size:1.2em;font-family:sans-serif;margin:0px 0px 20px 20px;"]);
+var Label = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].label.withConfig({
+  displayName: "StyleModalForm__Label",
+  componentId: "jrigbp-5"
+})(["display:block;margin-bottom:10px;font-family:'Red Hat Text',sans-serif;color:rgb(152,161,179);margin:0px 0px 10px 15px;"]);
+var Input = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].input.withConfig({
+  displayName: "StyleModalForm__Input",
+  componentId: "jrigbp-6"
+})(["display:block;height:30px;width:90%;margin:0 auto 10px;border:none;background-color:rgb(242,245,250);border-radius:0px;&:focus{outline:none;border-bottom:2px solid rgb(33,150,243);}"]);
+var ButtonSave = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button.withConfig({
+  displayName: "StyleModalForm__ButtonSave",
+  componentId: "jrigbp-7"
+})(["margin:20px 0;float:right;width:75px;height:35px;cursor:pointer;background-color:rgb(22,138,230);outline:none;border:1px solid rgb(22,138,230);border-radius:2px;color:#fff;font-weight:700;font-size:1em;"]);
+var ButtonDelete = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button.withConfig({
+  displayName: "StyleModalForm__ButtonDelete",
+  componentId: "jrigbp-8"
+})(["margin:20px 10px 0px 0px;float:right;width:75px;height:35px;cursor:pointer;background-color:rgba(230,22,32,0.85);outline:none;border:1px solid rgba(230,22,32,0.85);border-radius:2px;color:#fff;font-weight:700;font-size:1em;"]);
 
 /***/ }),
 
