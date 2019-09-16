@@ -12,11 +12,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-beautiful-dnd */ "./node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.esm.js");
-/* harmony import */ var _Job__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Job */ "./components/Jobs/Job.js");
-/* harmony import */ var _Styled_StyleColumn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Styled/StyleColumn */ "./components/Styled/StyleColumn.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-beautiful-dnd */ "./node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.esm.js");
+/* harmony import */ var _Job__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Job */ "./components/Jobs/Job.js");
+/* harmony import */ var _Styled_StyleColumn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Styled/StyleColumn */ "./components/Styled/StyleColumn.js");
 
 var _jsxFileName = "/home/greg/sites/jobTracking/components/Jobs/Column.js";
+
 
 
 
@@ -27,67 +30,67 @@ var Column = function Column(_ref) {
       column = _ref.column,
       index = _ref.index,
       modalTrigger = _ref.modalTrigger;
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_2__["Droppable"], {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_3__["Droppable"], {
     droppableId: column.id,
     key: column.id,
     index: index,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 14
     },
     __self: this
   }, function (provided, snapshot) {
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleColumn__WEBPACK_IMPORTED_MODULE_4__["ContainerColumn"], {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleColumn__WEBPACK_IMPORTED_MODULE_5__["ContainerColumn"], {
       isDraggingOver: snapshot.isDraggingOver,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleColumn__WEBPACK_IMPORTED_MODULE_4__["H3"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 16
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleColumn__WEBPACK_IMPORTED_MODULE_5__["H3"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 17
       },
       __self: this
-    }, jobs.length), column.title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleColumn__WEBPACK_IMPORTED_MODULE_4__["Center"], {
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 18
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleColumn__WEBPACK_IMPORTED_MODULE_4__["Button"], {
-      onClick: function onClick() {
-        return modalTrigger(column.id);
-      },
+    }, jobs.length), column.title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleColumn__WEBPACK_IMPORTED_MODULE_5__["Center"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 21
       },
       __self: this
-    }, "+ Add job")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleColumn__WEBPACK_IMPORTED_MODULE_4__["JobList"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, provided.draggableProps, provided.dragHandleProps, {
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleColumn__WEBPACK_IMPORTED_MODULE_5__["Button"], {
+      onClick: function onClick() {
+        return modalTrigger(column.id);
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: this
+    }, "+ Add job")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleColumn__WEBPACK_IMPORTED_MODULE_5__["JobList"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, provided.draggableProps, provided.dragHandleProps, {
       ref: provided.innerRef,
       isDraggingOver: snapshot.isDraggingOver,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 25
       },
       __self: this
-    }), jobs && jobs.map(function (job, index) {
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Job__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        key: index,
+    }), jobs && jobs.map(function (job, i) {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Job__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        key: job.id,
         job: job,
-        index: index,
+        index: i,
         columnId: column.id,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 33
         },
         __self: this
       });
@@ -95,6 +98,21 @@ var Column = function Column(_ref) {
   });
 };
 
+Column.propTypes = {
+  jobs: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
+    id: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+    company: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+    position: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+    date: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number
+  })),
+  column: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
+    id: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+    title: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+    jobs: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string)
+  }).isRequired,
+  index: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number.isRequired,
+  modalTrigger: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired
+};
 /* harmony default export */ __webpack_exports__["default"] = (Column);
 
 /***/ }),
@@ -111,13 +129,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-beautiful-dnd */ "./node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.esm.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../context/JobContext */ "./components/context/JobContext.js");
-/* harmony import */ var _Styled_StyleJob__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Styled/StyleJob */ "./components/Styled/StyleJob.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-beautiful-dnd */ "./node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.esm.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../context/JobContext */ "./components/context/JobContext.js");
+/* harmony import */ var _Styled_StyleJob__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Styled/StyleJob */ "./components/Styled/StyleJob.js");
 
 var _jsxFileName = "/home/greg/sites/jobTracking/components/Jobs/Job.js";
+
 
 
 
@@ -129,20 +150,20 @@ var Job = function Job(_ref) {
       index = _ref.index,
       columnId = _ref.columnId;
 
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_context_JobContext__WEBPACK_IMPORTED_MODULE_4__["JobContext"]),
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_context_JobContext__WEBPACK_IMPORTED_MODULE_5__["JobContext"]),
       editModal = _useContext.editModal;
 
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_2__["Draggable"], {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_3__["Draggable"], {
     draggableId: job.id,
     key: job.id,
     index: index,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 12
     },
     __self: this
   }, function (provided, snapshot) {
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleJob__WEBPACK_IMPORTED_MODULE_5__["ContainerJob"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleJob__WEBPACK_IMPORTED_MODULE_6__["ContainerJob"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
       onDoubleClick: function onDoubleClick() {
         return editModal(job, columnId);
       },
@@ -151,31 +172,41 @@ var Job = function Job(_ref) {
       isDragging: snapshot.isDragging,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13
+        lineNumber: 14
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleJob__WEBPACK_IMPORTED_MODULE_5__["Company"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: this
-    }, job.company), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleJob__WEBPACK_IMPORTED_MODULE_5__["Position"], {
+    }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleJob__WEBPACK_IMPORTED_MODULE_6__["Company"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 21
       },
       __self: this
-    }, job.position), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleJob__WEBPACK_IMPORTED_MODULE_5__["Ago"], {
+    }, job.company), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleJob__WEBPACK_IMPORTED_MODULE_6__["Position"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 22
       },
       __self: this
-    }, moment__WEBPACK_IMPORTED_MODULE_3___default()(job.date).fromNow()));
+    }, job.position), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Styled_StyleJob__WEBPACK_IMPORTED_MODULE_6__["Ago"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: this
+    }, moment__WEBPACK_IMPORTED_MODULE_4___default()(job.date).fromNow()));
   });
 };
 
+Job.propTypes = {
+  job: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
+    id: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+    company: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+    position: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+    date: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number
+  }).isRequired,
+  columnId: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+  index: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number
+};
 /* harmony default export */ __webpack_exports__["default"] = (Job);
 
 /***/ }),
@@ -213,7 +244,7 @@ var JobsContainer = function JobsContainer() {
       modalTrigger = _useContext.modalTrigger,
       isModalOpen = _useContext.isModalOpen;
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Styled_StyleJobContainer__WEBPACK_IMPORTED_MODULE_5__["ContainerJobContain"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Styled_StyleJobContainer__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 19
@@ -522,18 +553,18 @@ var Ago = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConf
 /*!************************************************!*\
   !*** ./components/Styled/StyleJobContainer.js ***!
   \************************************************/
-/*! exports provided: ContainerJobContain */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContainerJobContain", function() { return ContainerJobContain; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
 var ContainerJobContain = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "StyleJobContainer__ContainerJobContain",
   componentId: "sc-4b946y-0"
 })(["grid-row:content;display:grid;grid-template-columns:repeat(5,1fr);grid-column-gap:1em;background-color:#f2f5fa;padding:2em 0;"]);
+/* harmony default export */ __webpack_exports__["default"] = (ContainerJobContain);
 
 /***/ }),
 
@@ -606,23 +637,22 @@ var ButtonDelete = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].but
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobContext", function() { return JobContext; });
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/date/now */ "./node_modules/@babel/runtime-corejs2/core-js/date/now.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/date/now */ "./node_modules/@babel/runtime-corejs2/core-js/date/now.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! uuid/v4 */ "./node_modules/uuid/v4.js");
 /* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(uuid_v4__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _lib_data__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../lib/data */ "./lib/data.js");
 /* harmony import */ var _lib_dragAndDrop__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../lib/dragAndDrop */ "./lib/dragAndDrop.js");
-
 
 
 
@@ -634,24 +664,25 @@ var _jsxFileName = "/home/greg/sites/jobTracking/components/context/JobContext.j
 
 
 
-var JobContext = react__WEBPACK_IMPORTED_MODULE_7___default.a.createContext();
+
+var JobContext = react__WEBPACK_IMPORTED_MODULE_6___default.a.createContext();
 
 var JobContextProvider = function JobContextProvider(_ref) {
   var children = _ref.children;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_7__["useState"])(),
-      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_6__["default"])(_useState, 2),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_6__["useState"])(),
+      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_5__["default"])(_useState, 2),
       state = _useState2[0],
       setState = _useState2[1];
 
-  var isInitialMount = Object(react__WEBPACK_IMPORTED_MODULE_7__["useRef"])(true);
-  Object(react__WEBPACK_IMPORTED_MODULE_7__["useEffect"])(function () {
+  var isInitialMount = Object(react__WEBPACK_IMPORTED_MODULE_6__["useRef"])(true);
+  Object(react__WEBPACK_IMPORTED_MODULE_6__["useEffect"])(function () {
     if (isInitialMount.current) {
       isInitialMount.current = false;
-      var initialState = JSON.parse(localStorage.getItem('data')) || _lib_data__WEBPACK_IMPORTED_MODULE_9__["default"];
+      var initialState = JSON.parse(window.localStorage.getItem('data')) || _lib_data__WEBPACK_IMPORTED_MODULE_9__["default"];
       setState(initialState);
     } else {
-      localStorage.setItem('data', _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_5___default()(state));
+      window.localStorage.setItem('data', _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_4___default()(state));
     }
   });
 
@@ -659,11 +690,11 @@ var JobContextProvider = function JobContextProvider(_ref) {
     return Object(_lib_dragAndDrop__WEBPACK_IMPORTED_MODULE_10__["default"])(result, state, setState);
   };
 
-  var modalTrigger = function modalTrigger(data) {
-    setState(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_4__["default"])({}, state, {
+  var modalTrigger = function modalTrigger(columnId) {
+    setState(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, state, {
       isModalOpen: !state.isModalOpen,
       modalData: {
-        columnId: data,
+        columnId: columnId,
         company: '',
         position: '',
         jobId: null
@@ -678,13 +709,13 @@ var JobContextProvider = function JobContextProvider(_ref) {
         jobId = modalValues.jobId;
 
     if (jobId) {
-      var _newJobs = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_4__["default"])({}, state.jobs, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({}, jobId, Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_4__["default"])({}, state.jobs[jobId], {
+      var _newJobs = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, state.jobs, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({}, jobId, Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, state.jobs[jobId], {
         company: company,
         position: position,
-        date: _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_3___default()()
+        date: _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_2___default()()
       })));
 
-      var _newState = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_4__["default"])({}, state, {
+      var _newState = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, state, {
         jobs: _newJobs,
         isModalOpen: !state.isModalOpen,
         modalData: {
@@ -704,18 +735,18 @@ var JobContextProvider = function JobContextProvider(_ref) {
       id: uniqId,
       company: company,
       position: position,
-      date: _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_3___default()()
+      date: _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_2___default()()
     };
 
-    var newJobs = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_4__["default"])({}, state.jobs, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({}, uniqId, newJob));
+    var newJobs = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, state.jobs, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({}, uniqId, newJob));
 
     var selectedColumn = state.columns[columnId];
 
-    var newColumns = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_4__["default"])({}, state.columns, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({}, columnId, Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_4__["default"])({}, selectedColumn, {
-      jobs: [].concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(selectedColumn.jobs), [uniqId])
+    var newColumns = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, state.columns, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({}, columnId, Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, selectedColumn, {
+      jobs: [].concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(selectedColumn.jobs), [uniqId])
     })));
 
-    var newState = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_4__["default"])({}, state, {
+    var newState = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, state, {
       jobs: newJobs,
       columns: newColumns,
       isModalOpen: !state.isModalOpen,
@@ -735,7 +766,7 @@ var JobContextProvider = function JobContextProvider(_ref) {
         position = job.position,
         id = job.id;
 
-    var newState = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_4__["default"])({}, state, {
+    var newState = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, state, {
       isModalOpen: !state.isModalOpen,
       modalData: {
         columnId: columnId,
@@ -749,15 +780,15 @@ var JobContextProvider = function JobContextProvider(_ref) {
   };
 
   var deleteSubmit = function deleteSubmit(jobId, columnId) {
-    var oldState = _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state);
+    var oldState = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, state);
 
     delete oldState.jobs[jobId];
     var newColumnJobs = oldState.columns[columnId].jobs.filter(function (el) {
       return el !== jobId;
     });
-    oldState.columns[columnId].jobs = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(newColumnJobs);
+    oldState.columns[columnId].jobs = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(newColumnJobs);
 
-    var newState = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_4__["default"])({}, oldState, {
+    var newState = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, oldState, {
       isModalOpen: !state.isModalOpen
     });
 
@@ -765,16 +796,17 @@ var JobContextProvider = function JobContextProvider(_ref) {
   };
 
   var deleteAll = function deleteAll() {
+    // eslint-disable-next-line no-alert
     window.confirm('Are you sure to delete all records?');
     setState(_lib_data__WEBPACK_IMPORTED_MODULE_9__["default"]);
   };
 
-  var uploadData = function uploadData(data) {
-    setState(data);
+  var uploadData = function uploadData(cxt) {
+    setState(cxt);
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(JobContext.Provider, {
-    value: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_4__["default"])({}, state, {
+  return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(JobContext.Provider, {
+    value: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, state, {
       onDragEnd: onDragEnd,
       modalTrigger: modalTrigger,
       modalSubmit: modalSubmit,
@@ -785,12 +817,15 @@ var JobContextProvider = function JobContextProvider(_ref) {
     }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 155
+      lineNumber: 158
     },
     __self: this
   }, children);
 };
 
+JobContextProvider.propTypes = {
+  children: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.element.isRequired
+};
 /* harmony default export */ __webpack_exports__["default"] = (JobContextProvider);
 
 
@@ -895,13 +930,10 @@ var data = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/date/now */ "./node_modules/@babel/runtime-corejs2/core-js/date/now.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/array/from */ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_4__);
-
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/array/from */ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
@@ -925,50 +957,50 @@ __webpack_require__.r(__webpack_exports__);
   var finish = state.columns[destination.droppableId];
 
   if (start === finish) {
-    var newJobIds = _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_4___default()(start.jobs);
+    var newJobIds = _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_3___default()(start.jobs);
 
     newJobIds.splice(source.index, 1);
     newJobIds.splice(destination.index, 0, draggableId);
 
-    var newColumn = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, start, {
+    var newColumn = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, start, {
       jobs: newJobIds
     });
 
-    var _newState = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, state, {
-      columns: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, state.columns, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({}, newColumn.id, newColumn))
+    var _newState = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, state, {
+      columns: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, state.columns, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({}, newColumn.id, newColumn))
     });
 
     setState(_newState);
     return;
   }
 
-  var startJobIds = _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_4___default()(start.jobs);
+  var startJobIds = _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_3___default()(start.jobs);
 
   startJobIds.splice(source.index, 1);
 
-  var newStart = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, start, {
+  var newStart = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, start, {
     jobs: startJobIds
   });
 
-  var finishJobIds = _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_4___default()(finish.jobs);
+  var finishJobIds = _babel_runtime_corejs2_core_js_array_from__WEBPACK_IMPORTED_MODULE_3___default()(finish.jobs);
 
   finishJobIds.splice(destination.index, 0, draggableId);
 
-  var newFinish = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, finish, {
+  var newFinish = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, finish, {
     jobs: finishJobIds
   });
 
-  var oldState = _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_1___default()({}, state);
+  var oldState = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, state);
 
   var oldJobs = oldState.jobs;
 
-  var updatedDateJob = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, oldJobs[draggableId], {
+  var updatedDateJob = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, oldJobs[draggableId], {
     date: _babel_runtime_corejs2_core_js_date_now__WEBPACK_IMPORTED_MODULE_0___default()()
   });
 
-  var newState = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, state, {
-    jobs: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, oldJobs, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({}, draggableId, Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, updatedDateJob))),
-    columns: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, state.columns, (_objectSpread4 = {}, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_objectSpread4, newStart.id, newStart), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_objectSpread4, newFinish.id, newFinish), _objectSpread4))
+  var newState = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, state, {
+    jobs: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, oldJobs, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({}, draggableId, Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, updatedDateJob))),
+    columns: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, state.columns, (_objectSpread4 = {}, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(_objectSpread4, newStart.id, newStart), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(_objectSpread4, newFinish.id, newFinish), _objectSpread4))
   });
 
   setState(newState);
