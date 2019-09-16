@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from 'react';
-import HeaderButton from '../Styled/HeaderButton';
+import { HeaderButton } from '../Styled/HeaderButton';
 import { JobContext } from '../context/JobContext';
 
 const Import = () => {

@@ -1,44 +1,22 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
 import { JobContext } from './context/JobContext';
 import Export from './Button/Export';
 import DeleteAll from './Button/DeleteAll';
 import Import from './Button/Import';
-
-const Container = styled.div`
-  grid-row: header;
-  padding: 2em;
-`;
-
-const H1 = styled.h1`
-  font-size: 2.3em;
-  font-weight: 700;
-  margin-bottom: 0.25em;
-  font-family: 'Red Hat Text', sans-serif;
-`;
-
-const Span = styled.span`
-  font-style: italic;
-`;
-
-const LeftSide = styled.div`
-  width: 50%;
-  float: left;
-`;
-
-const RightSide = styled.div`
-  width: 50%;
-  float: right;
-  text-align: right;
-  margin-top: 30px;
-`;
+import {
+  ContainerHeader,
+  H1,
+  Span,
+  LeftSide,
+  RightSide
+} from './Styled/StyleHeader';
 
 const Header = () => {
   const { jobs } = useContext(JobContext);
   const jobsCount = jobs && Object.keys(jobs).length;
 
   return (
-    <Container>
+    <ContainerHeader>
       <LeftSide>
         <H1>Job Tracking</H1>
         <Span>
@@ -54,7 +32,7 @@ const Header = () => {
           </>
         )}
       </RightSide>
-    </Container>
+    </ContainerHeader>
   );
 };
 export default Header;
