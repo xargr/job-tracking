@@ -18,7 +18,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Job__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Job */ "./components/Jobs/Job.js");
 /* harmony import */ var _Styled_StyleColumn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Styled/StyleColumn */ "./components/Styled/StyleColumn.js");
 
-var _jsxFileName = "/home/greg/sites/jobTracking/components/Jobs/Column.js";
+var _jsxFileName = "/home/greg/sites/job-tracking/components/Jobs/Column.js";
 
 
 
@@ -137,7 +137,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../context/JobContext */ "./components/context/JobContext.js");
 /* harmony import */ var _Styled_StyleJob__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Styled/StyleJob */ "./components/Styled/StyleJob.js");
 
-var _jsxFileName = "/home/greg/sites/jobTracking/components/Jobs/Job.js";
+var _jsxFileName = "/home/greg/sites/job-tracking/components/Jobs/Job.js";
 
 
 
@@ -227,7 +227,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context/JobContext */ "./components/context/JobContext.js");
 /* harmony import */ var _ModalForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ModalForm */ "./components/ModalForm.js");
 /* harmony import */ var _Styled_StyleJobContainer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Styled/StyleJobContainer */ "./components/Styled/StyleJobContainer.js");
-var _jsxFileName = "/home/greg/sites/jobTracking/components/Jobs/JobsContainer.js";
+var _jsxFileName = "/home/greg/sites/job-tracking/components/Jobs/JobsContainer.js";
 
 
 
@@ -307,7 +307,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/greg/sites/jobTracking/components/ModalForm.js";
+var _jsxFileName = "/home/greg/sites/job-tracking/components/ModalForm.js";
 
 
 
@@ -503,11 +503,11 @@ var Center = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withC
 var Button = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button.withConfig({
   displayName: "StyleColumn__Button",
   componentId: "sc-5jhwh-3"
-})(["color:#2696f3;border:1px dashed #2696f3;background-color:transparent;margin:1em;padding:0.75em 1.5em;font-family:'Red Hat Text',sans-serif;font-weight:400;cursor:pointer;font-size:1em;&:hover{background-color:#2696f3;color:#fff;}&:focus{outline:none;}"]);
+})(["color:#2696f3;border:1px dashed #2696f3;background-color:transparent;margin:1em;padding:0.75em 1.5em;font-family:'Red Hat Text',sans-serif;font-weight:400;cursor:pointer;font-size:1em;&:hover{background-color:#2696f3;color:#fff;}&:focus{outline:none;}@media (max-width:767px){padding:5px 4px;font-size:0.8em;}"]);
 var JobList = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "StyleColumn__JobList",
   componentId: "sc-5jhwh-4"
-})(["padding:8px;min-height:60vh;overflow-y:auto;height:60vh;border:", ";"], function (props) {
+})(["padding:8px;min-height:60vh;overflow-y:auto;height:60vh;border:", ";@media (min-width:768px) and (max-width:1024px){padding:0;}@media (max-width:767px){padding:0;}"], function (props) {
   return props.isDraggingOver ? '1px dotted grey' : 'none';
 });
 
@@ -563,7 +563,7 @@ __webpack_require__.r(__webpack_exports__);
 var ContainerJobContain = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "StyleJobContainer__ContainerJobContain",
   componentId: "sc-4b946y-0"
-})(["grid-row:content;display:grid;grid-template-columns:repeat(5,1fr);grid-column-gap:1em;background-color:#f2f5fa;padding:2em 0;"]);
+})(["grid-row:content;display:grid;grid-template-columns:repeat(5,1fr);grid-column-gap:1em;background-color:#f2f5fa;padding:2em 0;min-height:100vh;@media (min-width:768px) and (max-width:1024px){grid-column-gap:0;}@media (max-width:767px){padding:0;}"]);
 /* harmony default export */ __webpack_exports__["default"] = (ContainerJobContain);
 
 /***/ }),
@@ -659,7 +659,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/greg/sites/jobTracking/components/context/JobContext.js";
+var _jsxFileName = "/home/greg/sites/job-tracking/components/context/JobContext.js";
 
 
 
@@ -22337,10 +22337,10 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fgreg%2Fsites%2FjobTracking%2Fpages%2Findex.js!./":
-/*!********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fgreg%2Fsites%2FjobTracking%2Fpages%2Findex.js ***!
-  \********************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fgreg%2Fsites%2Fjob-tracking%2Fpages%2Findex.js!./":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fgreg%2Fsites%2Fjob-tracking%2Fpages%2Findex.js ***!
+  \*********************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36772,7 +36772,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Jobs_JobsContainer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Jobs/JobsContainer */ "./components/Jobs/JobsContainer.js");
-var _jsxFileName = "/home/greg/sites/jobTracking/pages/index.js";
+var _jsxFileName = "/home/greg/sites/job-tracking/pages/index.js";
 
 
 
@@ -36791,13 +36791,13 @@ var Index = function Index() {
 /***/ }),
 
 /***/ 1:
-/*!************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fgreg%2Fsites%2FjobTracking%2Fpages%2Findex.js ***!
-  \************************************************************************************************************************/
+/*!*************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fgreg%2Fsites%2Fjob-tracking%2Fpages%2Findex.js ***!
+  \*************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fgreg%2Fsites%2FjobTracking%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fgreg%2Fsites%2FjobTracking%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fgreg%2Fsites%2Fjob-tracking%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fgreg%2Fsites%2Fjob-tracking%2Fpages%2Findex.js!./");
 
 
 /***/ }),

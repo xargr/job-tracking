@@ -13,7 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Styled_HeaderButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Styled/HeaderButton */ "./components/Styled/HeaderButton.js");
 /* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../context/JobContext */ "./components/context/JobContext.js");
-var _jsxFileName = "/home/greg/sites/jobTracking/components/Button/DeleteAll.js";
+var _jsxFileName = "/home/greg/sites/job-tracking/components/Button/DeleteAll.js";
 
 
 
@@ -52,7 +52,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Styled_HeaderButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Styled/HeaderButton */ "./components/Styled/HeaderButton.js");
 /* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../context/JobContext */ "./components/context/JobContext.js");
 /* harmony import */ var _lib_toJson__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../lib/toJson */ "./lib/toJson.js");
-var _jsxFileName = "/home/greg/sites/jobTracking/components/Button/Export.js";
+var _jsxFileName = "/home/greg/sites/job-tracking/components/Button/Export.js";
 
 
 
@@ -89,7 +89,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Styled_HeaderButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Styled/HeaderButton */ "./components/Styled/HeaderButton.js");
 /* harmony import */ var _context_JobContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../context/JobContext */ "./components/context/JobContext.js");
-var _jsxFileName = "/home/greg/sites/jobTracking/components/Button/Import.js";
+var _jsxFileName = "/home/greg/sites/job-tracking/components/Button/Import.js";
 
 
 
@@ -169,7 +169,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Button_Import__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Button/Import */ "./components/Button/Import.js");
 /* harmony import */ var _Styled_StyleHeader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Styled/StyleHeader */ "./components/Styled/StyleHeader.js");
 
-var _jsxFileName = "/home/greg/sites/jobTracking/components/Header.js";
+var _jsxFileName = "/home/greg/sites/job-tracking/components/Header.js";
 
 
 
@@ -249,7 +249,7 @@ var Header = function Header() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/greg/sites/jobTracking/components/Meta.js";
+var _jsxFileName = "/home/greg/sites/job-tracking/components/Meta.js";
 
 
 var Meta = function Meta() {
@@ -290,7 +290,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Meta__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Meta */ "./components/Meta.js");
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
 /* harmony import */ var _Styled_StylePage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Styled/StylePage */ "./components/Styled/StylePage.js");
-var _jsxFileName = "/home/greg/sites/jobTracking/components/Page.js";
+var _jsxFileName = "/home/greg/sites/job-tracking/components/Page.js";
 
 
 
@@ -365,15 +365,15 @@ __webpack_require__.r(__webpack_exports__);
 var ContainerHeader = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "StyleHeader__ContainerHeader",
   componentId: "sc-1qxc0dc-0"
-})(["grid-row:header;padding:2em;"]);
+})(["grid-row:header;padding:2em;@media (max-width:767px){padding:1em;}"]);
 var H1 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h1.withConfig({
   displayName: "StyleHeader__H1",
   componentId: "sc-1qxc0dc-1"
-})(["font-size:2.3em;font-weight:700;margin-bottom:0.25em;font-family:'Red Hat Text',sans-serif;"]);
+})(["font-size:2.3em;font-weight:700;margin-bottom:0.25em;font-family:'Red Hat Text',sans-serif;@media (min-width:768px) and (max-width:1024px){font-size:2em;}@media (max-width:767px){font-size:2em;}"]);
 var Span = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].span.withConfig({
   displayName: "StyleHeader__Span",
   componentId: "sc-1qxc0dc-2"
-})(["font-style:italic;"]);
+})(["font-style:italic;@media (min-width:768px) and (max-width:1024px){font-size:0.85em;}"]);
 var LeftSide = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "StyleHeader__LeftSide",
   componentId: "sc-1qxc0dc-3"
@@ -399,7 +399,7 @@ __webpack_require__.r(__webpack_exports__);
 var ContainerPage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "StylePage__ContainerPage",
   componentId: "ay40ho-0"
-})(["display:grid;grid-template-areas:'header' 'content';grid-template-rows:10vh 90vh;grid-row-gap:1em;"]);
+})(["display:grid;grid-template-areas:'header' 'content';grid-template-rows:15vh 85vh;grid-row-gap:1em;@media (min-width:768px) and (max-width:1024px){grid-template-rows:20vh 80vh;grid-row-gap:1em;}@media (max-width:767px){grid-template-rows:20vh 80vh;grid-row-gap:1em;}"]);
 /* harmony default export */ __webpack_exports__["default"] = (ContainerPage);
 
 /***/ }),
@@ -436,7 +436,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/greg/sites/jobTracking/components/context/JobContext.js";
+var _jsxFileName = "/home/greg/sites/job-tracking/components/context/JobContext.js";
 
 
 
@@ -13295,7 +13295,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/greg/sites/jobTracking/pages/_app.js";
+var _jsxFileName = "/home/greg/sites/job-tracking/pages/_app.js";
 
 
 
