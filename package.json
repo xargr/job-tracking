@@ -11,8 +11,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "deploy": "cp .nojekyll out/ && gh-pages -d out -a",
-    "dep": "npm run build && npm run export && npm run deploy"
+    "postdeploy": "cp .nojekyll out/ && gh-pages -d out -a",
+    "deploy": "npm run build && npm run export"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
