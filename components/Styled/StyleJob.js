@@ -16,6 +16,7 @@ export const Company = styled.div``;
 export const Position = styled.div`
   font-size: 0.9em;
   margin-top: 8px;
+  overflow: hidden;
 `;
 export const Ago = styled.div`
   font-size: 0.85em;

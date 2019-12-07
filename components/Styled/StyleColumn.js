@@ -60,6 +60,7 @@ export const JobList = styled.div`
   padding: 8px;
   min-height: 60vh;
   overflow-y: auto;
+  overflow-x: hidden;
   height: 60vh;
   border: ${props => (props.isDraggingOver ? '1px dotted grey' : 'none')};
 

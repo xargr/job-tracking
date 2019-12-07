@@ -3,8 +3,8 @@ import styled from 'styled-components';
 const ContainerJobContain = styled.div`
   grid-row: content;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-column-gap: 1em;
+  grid-template-columns: repeat(5, minmax(18%, 1fr));
+  grid-column-gap: 0.75em;
   background-color: #f2f5fa;
   padding: 2em 0;
   min-height: 100vh;
